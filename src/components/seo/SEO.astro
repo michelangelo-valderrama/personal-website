@@ -1,0 +1,19 @@
+---
+export interface Props {
+  title?: string
+  description?: string
+}
+---
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta name="generator" content={Astro.generator} />
+
+<link rel="shortcut icon" href="favicon.svg" type="image/x-icon" />
+
+<link rel="canonical" href={Astro.url.href} />
+
+<meta name="robots" content="index, folow" />
+
+<title>{Astro.props.title}</title>
+<meta name="description" content={Astro.props.description} />
