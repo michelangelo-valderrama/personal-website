@@ -1,4 +1,5 @@
 ---
+import "@fontsource-variable/plus-jakarta-sans"
 import "@/styles/globals.css"
 ---
 
@@ -6,7 +7,9 @@ import "@/styles/globals.css"
   <head>
     <slot name="meta" />
   </head>
-  <body class="bg-background text-foreground">
+  <body
+    class="min-h-svh bg-background text-foreground selection:bg-foreground selection:text-background antialiased"
+  >
     <slot />
   </body>
 </html>

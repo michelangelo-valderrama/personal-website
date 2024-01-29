@@ -1,0 +1,32 @@
+---
+import type { GetStaticPaths } from "astro"
+import { getCollection, type CollectionEntry } from "astro:content"
+import Root from "@/layouts/Root.astro"
+import Layout from "@/layouts/Layout.astro"
+import Prose from "@/components/Prose.astro"
+import SEO from "@/components/seo/SEO.astro"
+
+export const getStaticPaths = (async () => {
+  const articles = await getCollection("articles")
+  return articles.map((a) => ({
+    params: { article: a.slug },
+    props: a,
+  }))
+}) satisfies GetStaticPaths
+type Props = CollectionEntry<"articles">
+const { render, data } = Astro.props
+const { Content } = await render()
+---
+
+<Root>
+  <SEO slot="meta" title={data.title} description={data.description} />
+  <Layout class="pt-32">
+    <div>
+      <a href="/">Volver</a>
+    </div>
+    <Prose>
+      <h1>{data.title}</h1>
+      <Content />
+    </Prose>
+  </Layout>
+</Root>

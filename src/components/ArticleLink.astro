@@ -1,0 +1,26 @@
+---
+interface Props {
+  slug: string
+  title: string
+  date: Date
+}
+
+const { date, slug, title } = Astro.props
+
+const time = date.toLocaleDateString("es", {
+  day: "2-digit",
+  month: "short",
+})
+---
+
+<a
+  href={slug}
+  class="flex items-start gap-x-2 hover:bg-accent/60 hover:text-accent-foreground transition pr-3 pl-4 py-3.5 group"
+>
+  <p class="font-bold flex-1 max-h-12 overflow-hidden text-ellipsis">{title}</p>
+  <span class="w-12 text-right">
+    <time class="text-muted-foreground text-sm" datetime="2023-01-06"
+      >{time}</time
+    >
+  </span>
+</a>
