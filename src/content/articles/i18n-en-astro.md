@@ -25,7 +25,7 @@ pages/
 
 De ello aprendí algo muy importante:
 
-> _“Ni de coña vuelvo a tener que copiar una página entera para que esté en otro puto idioma.”_
+> Ni de coña vuelvo a tener que copiar una página entera para que esté en otro puto idioma.
 
 Siempre que se añadía cualquier cosa a la web había que realizarlo mínimo dos veces y era horrible, por eso decidí crear el sistema de idiomas de otra manera, uno que he denominado _sistema de idiomas en base a archivos_, donde tienes las traducciones en archivos separados.
 
@@ -133,15 +133,15 @@ En `config.ts` se importan las traducciones, se configuran los idiomas, sus _loc
 5. Por último, puedes añadir algunos _import aliases_ útiles a tu archivo `tsconfig.json`.
    ```json
    {
-   ...,
-   "compilerOptions": {
-     "baseUrl": ".",
-     "paths": {
-       "@i18n/*": ["src/i18n/*"],
-       "@layouts/*": ["src/layouts/*"],
-       "@components/*": ["src/components/*"]
+     ...,
+     "compilerOptions": {
+       "baseUrl": ".",
+       "paths": {
+         "@i18n/*": ["src/i18n/*"],
+         "@layouts/*": ["src/layouts/*"],
+         "@components/*": ["src/components/*"]
+       }
      }
-   }
    }
    ```
 

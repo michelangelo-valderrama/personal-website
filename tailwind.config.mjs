@@ -15,7 +15,9 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        sans: ["Karla Variable", ...defaultTheme.fontFamily.sans],
+        sans: ["Geist Sans", ...defaultTheme.fontFamily.sans],
+        serif: ["Source Serif Pro", ...defaultTheme.fontFamily.serif],
+        mono: ["Cascadia", ...defaultTheme.fontFamily.mono],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -74,7 +76,7 @@ module.exports = {
       typography: {
         DEFAULT: {
           css: {
-            h1: { "@apply text-4xl font-extrabold lg:text-5xl": "" },
+            h1: { "@apply text-4xl font-semibold lg:text-5xl": "" },
             h2: {
               "@apply border-b pb-2 text-3xl font-semibold first:mt-0 first-of-type:mt-6 md:first-of-type:mt-8":
                 "",
@@ -104,7 +106,7 @@ module.exports = {
               "@apply relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm font-normal":
                 "",
             },
-            img: { "@apply mx-auto": "" },
+            img: { "@apply mx-auto border shadow": "" },
             figcaption: { "@apply text-center": "" },
             ".h-icon": {
               "@apply no-underline text-muted-foreground before:content-['§_']":

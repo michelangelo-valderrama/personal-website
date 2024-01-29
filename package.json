@@ -4,9 +4,11 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
+    "dev:host": "astro dev --host",
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
+    "preview:host": "astro preview --host",
     "astro": "astro"
   },
   "dependencies": {
@@ -14,8 +16,8 @@
     "@astrojs/mdx": "^2.1.0",
     "@astrojs/react": "^3.0.9",
     "@astrojs/tailwind": "^5.1.0",
-    "@fontsource-variable/karla": "^5.0.19",
-    "@fontsource-variable/plus-jakarta-sans": "^5.0.19",
+    "@fontsource/geist-sans": "^5.0.1",
+    "@fontsource/source-serif-pro": "^5.0.8",
     "@radix-ui/react-icons": "^1.3.0",
     "@radix-ui/react-slot": "^1.0.2",
     "@types/react": "^18.2.48",

@@ -27,7 +27,7 @@ const { Content } = await render()
     href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css"
     rel="stylesheet"
   />
-  <Layout class="pt-32 mb-[90svh]">
+  <Layout class="pt-24 md:pt-32 mb-[90svh]">
     <div class="mb-6">
       <a
         href="/"
@@ -38,7 +38,12 @@ const { Content } = await render()
       </a>
     </div>
     <Prose>
-      <h1>{data.title}</h1>
+      <header class="mb-10">
+        <h1 class="mb-2 font-serif">{data.title}</h1>
+        <time class="text-muted-foreground text-sm" datetime={data.date.toISOString()}>
+          {data.date.toLocaleDateString("es", { dateStyle: "medium" })}
+        </time>
+      </header>
       <Content />
     </Prose>
   </Layout>

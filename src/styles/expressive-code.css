@@ -1,3 +1,12 @@
+.expressive-code .copy button {
+  width: 1.6rem !important;
+  height: 1.6rem !important;
+}
+
+.expressive-code .copy button::after {
+  margin: 0.4rem !important;
+}
+
 .expressive-code {
   margin-bottom: 2rem;
 }

@@ -30,6 +30,7 @@ export default defineConfig({
         codeBackground: "#18181b",
         codeFontFamily:
           "Cascadia, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace",
+        codePaddingInline: "1rem",
         frames: {
           editorActiveTabBackground: "#18181b",
           terminalBackground: "#18181b",
