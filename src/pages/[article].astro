@@ -20,6 +20,11 @@ const { Content } = await render()
 
 <Root>
   <SEO slot="meta" title={data.title} description={data.description} />
+  <link
+    slot="meta"
+    href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css"
+    rel="stylesheet"
+  />
   <Layout class="pt-32">
     <div>
       <a href="/">Volver</a>

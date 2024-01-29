@@ -4,7 +4,7 @@ const articles = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string(),
-    date: z.date(),
+    date: z.date().default(new Date()),
     img: z.string().optional(),
     tags: z.array(z.string()).optional(),
   }),

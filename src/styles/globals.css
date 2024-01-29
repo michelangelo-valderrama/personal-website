@@ -18,3 +18,7 @@
     @apply text-pretty;
   }
 }
+
+.katex-display {
+  overflow-x: scroll;
+}
