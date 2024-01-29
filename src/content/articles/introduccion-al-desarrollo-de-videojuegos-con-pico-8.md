@@ -225,7 +225,7 @@ end
 
 Si presiona `X` verá como aparece `Has presionado x`. En la figura 6 podrá ver los números que tiene asignado cada tecla, aunque... ¿se acuerda que anteriormente dije que las mayúsculas estaban reservadas para caracteres especiales? (figura 7).
 
-![Figura 6: Pequeño *Cheat Sheet* de PICO-8](/images/blog/introduccion-al-desarrollo-de-videojuegos-con-pico-8/mini-cheat-sheet.png)
+![Figura 6: Pequeño Cheat Sheet de PICO-8](/images/blog/introduccion-al-desarrollo-de-videojuegos-con-pico-8/mini-cheat-sheet.png)
 
 ![Figura 7: Algunas letras especiales de PICO-8](/images/blog/introduccion-al-desarrollo-de-videojuegos-con-pico-8/letras-reservadas.png)
 
@@ -460,7 +460,7 @@ circfill(ballx, bally, ballsize, 15)
 
 La función `circfill` es como la función `rectfill`, solo que hay que pasarle por parámetros la posición del centro del círculo —`ballx` y `bally`—, su tamaño —`ballsize`— y su color —`15`—.
 
-### 3.3 Una pelota estática es una pelota aburrida
+### 3.3. Una pelota estática es una pelota aburrida
 
 Para que la pelota se mueva, escriba una nueva función debajo de `movepaddle`:
 
