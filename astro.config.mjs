@@ -7,6 +7,8 @@ import expressiveCode from "astro-expressive-code"
 /* plugins */
 import remarkMath from "remark-math"
 import rehypeKatex from "rehype-katex"
+/* others */
+import theme from "./public/vercel-theme.json"
 
 // https://astro.build/config
 export default defineConfig({
@@ -20,7 +22,19 @@ export default defineConfig({
     }),
     react(),
     expressiveCode({
-      themes: ["dark-plus"],
+      themes: [theme],
+      styleOverrides: {
+        borderColor: "#27272a",
+        codeBackground: "#18181b",
+        codeFontFamily:
+          "Cascadia, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace",
+        frames: {
+          editorActiveTabBackground: "#18181b",
+          terminalBackground: "#18181b",
+          terminalTitlebarBackground: "#18181b",
+          shadowColor: "transparent",
+        },
+      },
     }),
     mdx(),
   ],

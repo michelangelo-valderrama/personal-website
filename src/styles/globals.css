@@ -1,4 +1,5 @@
 @import "./variables.css";
+@import "./expressive-code.css";
 
 @tailwind base;
 @tailwind components;
