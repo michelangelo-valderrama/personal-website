@@ -86,7 +86,7 @@ module.exports = {
             h5: { "@apply text-lg font-semibold": "" },
             h6: { "@apply font-semibold": "" },
             p: {
-              "@apply leading-8 [&:not(:first-child)]:mt-6 text-pretty": "",
+              "@apply leading-8 text-foreground [&:not(:first-child)]:mt-6 text-pretty": "",
             },
             blockquote: {
               "@apply mt-6 border-l-2 border-l-border/80 pl-6 italic": "",

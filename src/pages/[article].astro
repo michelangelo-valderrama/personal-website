@@ -17,7 +17,7 @@ export const getStaticPaths = (async () => {
 }) satisfies GetStaticPaths
 type Props = CollectionEntry<"articles">
 const { render, data } = Astro.props
-const { Content } = await render()
+const { Content, remarkPluginFrontmatter } = await render()
 ---
 
 <Root>
@@ -40,9 +40,17 @@ const { Content } = await render()
     <Prose>
       <header class="mb-10">
         <h1 class="mb-2 font-serif">{data.title}</h1>
-        <time class="text-muted-foreground text-sm" datetime={data.date.toISOString()}>
-          {data.date.toLocaleDateString("es", { dateStyle: "medium" })}
-        </time>
+        <div
+          class="text-muted-foreground text-xs md:text-sm flex items-center gap-x-2 *:bg-muted/60 *:px-2 *:py-0.5 *:rounded-full"
+        >
+          <span>
+            <time datetime={data.date.toISOString()}>
+              {data.date.toLocaleDateString("es", { dateStyle: "medium" })}
+            </time>
+          </span>
+          <span>{remarkPluginFrontmatter.minutesRead}</span>
+          <!-- <span class="rounded-lg bg-muted/60 px-2 py-0.5">{remarkPluginFrontmatter.minutesRead}</span> -->
+        </div>
       </header>
       <Content />
     </Prose>

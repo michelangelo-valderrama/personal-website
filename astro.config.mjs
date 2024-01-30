@@ -5,7 +5,8 @@ import react from "@astrojs/react"
 import mdx from "@astrojs/mdx"
 import expressiveCode from "astro-expressive-code"
 /* plugins */
-import { remarkImageOptimization } from "./plugins/index"
+import { rehypeHeadingIds } from "@astrojs/markdown-remark"
+import { remarkImageOptimization, remarkReadingTime, rehypeLinkHeading } from "./plugins/index"
 import remarkImgAttr from "remark-imgattr"
 import remarkMath from "remark-math"
 import rehypeKatex from "rehype-katex"
@@ -15,8 +16,16 @@ import theme from "./public/vercel-theme.json"
 // https://astro.build/config
 export default defineConfig({
   markdown: {
-    remarkPlugins: [remarkMath, remarkImgAttr, remarkImageOptimization],
-    rehypePlugins: [rehypeKatex],
+    remarkPlugins: [
+      remarkMath,
+      remarkImgAttr,
+      [remarkImageOptimization, { figure: true }],
+      remarkReadingTime],
+    rehypePlugins: [
+      rehypeHeadingIds,
+      rehypeLinkHeading,
+      rehypeKatex
+    ],
   },
   integrations: [
     tailwind({
