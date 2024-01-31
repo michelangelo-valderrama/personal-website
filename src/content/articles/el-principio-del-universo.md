@@ -26,8 +26,6 @@ principio del universo y la segunda sobre su final.
 
 Por lo pronto, lo único que espero de este texto es que sea mínimamente interesante e instructivo.
 
----
-
 ## Parte 1: El Big Bang
 
 Todo comenzó con una gran explosión, no como las de la Tierra —que parten de un centro y se expanden hasta abarcar un área determinada—, fue una explosión que se produjo simultáneamente en todas partes hace unos 13.7 mil millones de años.

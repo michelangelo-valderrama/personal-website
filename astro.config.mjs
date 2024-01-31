@@ -9,18 +9,24 @@ import { rehypeHeadingIds } from "@astrojs/markdown-remark"
 import { remarkImageOptimization, remarkReadingTime, rehypeLinkHeading } from "./plugins/index"
 import remarkImgAttr from "remark-imgattr"
 import remarkMath from "remark-math"
+import remarkToc from "remark-toc"
 import rehypeKatex from "rehype-katex"
 /* others */
 import theme from "./public/vercel-theme.json"
 
+const site = "http://localhost:4321/"
+
 // https://astro.build/config
 export default defineConfig({
+  site,
   markdown: {
     remarkPlugins: [
+      remarkToc,
       remarkMath,
       remarkImgAttr,
       [remarkImageOptimization, { figure: true }],
-      remarkReadingTime],
+      remarkReadingTime,
+    ],
     rehypePlugins: [
       rehypeHeadingIds,
       rehypeLinkHeading,
