@@ -13,6 +13,5 @@ export const groupBy = (array: any[], key: string) =>
 export const parseImage = (image: string, path: string = "") =>
   image.replace(/%s/g, SITE.URL).replace(/%p/g, path)
 
-export const parseArticleImage = (article: CollectionEntry<"articles">) => {
-  return parseImage(article.data.img, `images/articles/${article.slug}`)
-}
+export const parseArticleImage = (article: CollectionEntry<"articles">) =>
+  parseImage(article.data.img, `images/articles/${article.slug}`)
