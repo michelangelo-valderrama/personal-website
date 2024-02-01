@@ -1,0 +1,36 @@
+---
+type TwitterCard = "summary" | "summary_large_image" | "player"
+type TwitterUser = `@${string}`
+
+interface Props {
+  title?: string
+  description?: string
+  card?: TwitterCard
+  site?: TwitterUser
+  creator?: TwitterUser
+  image?: {
+    src?: string | URL
+    alt?: string
+  }
+}
+
+const {
+  title,
+  description: desc,
+  card = "summary_large_image",
+  site,
+  creator,
+  image = {},
+} = Astro.props
+
+const { src, alt } = image
+---
+
+{/* Twitter Tags */}
+{title ? <meta property="twitter:title" content={title} /> : null}
+{desc ? <meta property="twitter:description" content={desc} /> : null}
+{card ? <meta property="twitter:card" content={card} /> : null}
+{site ? <meta property="twitter:site" content={site} /> : null}
+{creator ? <meta property="twitter:creator" content={creator} /> : null}
+{src ? <meta property="twitter:image" content={`${src}`} /> : null}
+{alt ? <meta property="twitter:image:alt" content={alt} /> : null}

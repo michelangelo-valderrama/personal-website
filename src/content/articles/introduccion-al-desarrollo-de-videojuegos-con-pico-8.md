@@ -14,7 +14,7 @@ tags:
 **PICO-8** es un motor de videojuegos relativamente conocido creado por Joseph White, aka _zep_. Con PICO-8, Joseph quería crear una consola con la que poder jugar videojuegos sencillos y a la vez poder desarrollarlos en la misma consola, como en una Commodore 64. Buscaba que fuera fácil de manejar, simple y, sobre todo, autosuficiente: que contenga todo lo necesario para desarrollar un videojuego sin necesidad de usar programas externos. Así nació el concepto de _fantasy console_, que vendría a ser un emulador de una consola que no
 existe, con todas las limitaciones que podría tener. Debido al minimaslismo y su potencial, PICO-8 se volvió muy usado en Game Jams. Puede entrar a su [página oficial](https://www.lexaloffle.com/pico-8.php) y jugar algunos videojuegos hechos por la comunidad (figura 1).
 
-![Figura 1: Screenshot de Poom](/images/blog/introduccion-al-desarrollo-de-videojuegos-con-pico-8/screenshot-de-poom.png)(width:384)
+![Figura 1: Screenshot de Poom](/images/articles/introduccion-al-desarrollo-de-videojuegos-con-pico-8/screenshot-de-poom.png)(width:384)
 
 Lo que nos interesa de todo esto es que, el año pasado, Joseph publicó una versión de PICO-8 totalmente gratuita que funciona en la web, que es con la que voy a trabajar durante todo este artículo.
 
@@ -24,9 +24,9 @@ Para hacer un videojuego se necesitan conocimientos en diversas materias, pero a
 
 Entre al siguiente enlace: <https://www.pico-8-edu.com>. Al principio solo verá unas letras blancas sobre un fondo negro (figura 2), está en el **Modo Comando**. Si escribe `help` verá una lista de comandos y, abajo del todo, verá que dice que presione `ESC` para cambiar al **Modo Editor**. Si hace lo que se dice verá una pantalla tal y como se muestra en la figura 3. También verá diferentes pestañas, en la que está usted ahora mismo es el **Editor de Código**.
 
-![Figura 2: Terminal de PICO-8](/images/blog/introduccion-al-desarrollo-de-videojuegos-con-pico-8/terminal-pico8.png)(width:384)
+![Figura 2: Terminal de PICO-8](/images/articles/introduccion-al-desarrollo-de-videojuegos-con-pico-8/terminal-pico8.png)(width:384)
 
-![Figura 3: Editor de código](/images/blog/introduccion-al-desarrollo-de-videojuegos-con-pico-8/editor-de-codigo.png)(width:384)
+![Figura 3: Editor de código](/images/articles/introduccion-al-desarrollo-de-videojuegos-con-pico-8/editor-de-codigo.png)(width:384)
 
 ### 2.1. Funciones y tipos de datos
 
@@ -38,9 +38,9 @@ print("hello, world!")
 
 No utilice mayúsculas, el tipo de fuente de PICO-8 por defecto solo utiliza las minúsculas para las letras, en cambio las mayúsculas están reservadas para otros caracteres especiales. Por ahora, presione `ESC`, escriba `run` en la línea de comandos y presiones la tecla `ENTER`. Tendría que ver algo como se muestra en la figura 5, si es así, ¡felicidades!, ahora puede presumir oficialmente de haber programado algo, sino es así revise si ha seguido bien todos lo pasos.
 
-![Figura 4: Hello, world!](/images/blog/introduccion-al-desarrollo-de-videojuegos-con-pico-8/hola-mundo.png)(width:384)
+![Figura 4: Hello, world!](/images/articles/introduccion-al-desarrollo-de-videojuegos-con-pico-8/hola-mundo.png)(width:384)
 
-![Figura 5: Ejecutar un programa](/images/blog/introduccion-al-desarrollo-de-videojuegos-con-pico-8/ejecutar-programa.png)(width:384)
+![Figura 5: Ejecutar un programa](/images/articles/introduccion-al-desarrollo-de-videojuegos-con-pico-8/ejecutar-programa.png)(width:384)
 
 > Nota: A partir de ahora, en los bloques de código si al final del todo aparece `> run` y después le siguen otras lineas significará que se ha ejecutado el programa y en las líneas se mostrará lo que tendría que salirle en pantalla.
 
@@ -225,9 +225,9 @@ end
 
 Si presiona `X` verá como aparece `Has presionado x`. En la figura 6 podrá ver los números que tiene asignado cada tecla, aunque... ¿se acuerda que anteriormente dije que las mayúsculas estaban reservadas para caracteres especiales? (figura 7).
 
-![Figura 6: Pequeño Cheat Sheet de PICO-8](/images/blog/introduccion-al-desarrollo-de-videojuegos-con-pico-8/mini-cheat-sheet.png)(width:384)
+![Figura 6: Pequeño Cheat Sheet de PICO-8](/images/articles/introduccion-al-desarrollo-de-videojuegos-con-pico-8/mini-cheat-sheet.png)(width:384)
 
-![Figura 7: Algunas letras especiales de PICO-8](/images/blog/introduccion-al-desarrollo-de-videojuegos-con-pico-8/letras-reservadas.png)(width:384)
+![Figura 7: Algunas letras especiales de PICO-8](/images/articles/introduccion-al-desarrollo-de-videojuegos-con-pico-8/letras-reservadas.png)(width:384)
 
 > Si ve que tiene la pantalla de comandos muy sucia, puede ejecutar el comando `cls` para limpiarla.
 
@@ -294,9 +294,9 @@ end
 
 Para empezar a hacer cosas más interesantes vaya a la segunda pestaña: el **Editor de Sprites** (figura 8). Una vez ahí, puede dibujar —con una resolución de 8 por 8 píxeles— el personaje que quiera, en mi caso dibujé un conejito al que llamaré Bunny (figura 9).
 
-![Figura 8: Editor de sprites](/images/blog/introduccion-al-desarrollo-de-videojuegos-con-pico-8/editor-de-sprites.png)(width:384)
+![Figura 8: Editor de sprites](/images/articles/introduccion-al-desarrollo-de-videojuegos-con-pico-8/editor-de-sprites.png)(width:384)
 
-![Figura 9: Pixelart de Bunny](/images/blog/introduccion-al-desarrollo-de-videojuegos-con-pico-8/bunny.png)(width:384)
+![Figura 9: Pixelart de Bunny](/images/articles/introduccion-al-desarrollo-de-videojuegos-con-pico-8/bunny.png)(width:384)
 
 Para hacer que este _sprite_ se dibuje en pantalla deberá escribir lo siguiente:
 
@@ -314,9 +314,9 @@ La función `spr` puede recibir más parámetros como la posición del sprite �
 
 La posición de un punto viene determinado por una coordenada en el eje `x` y en el eje `y`. El valor de `x` es la distancia del punto al lado izquiero de la pantalla, mientras que el valor de `y` es la distancia del punto al lado superior de la pantalla (figura 10). Así, la esquina superior izquierda es el _punto de origen_ o punto `(0,0)`. Por defecto, el punto de un sprite no es el centro del sprite, es su esquina superior izquierda (figura 11).
 
-![Figura 10: Sistema de coordenadas](/images/blog/introduccion-al-desarrollo-de-videojuegos-con-pico-8/sistema-de-coordenadas.png)(width:384)
+![Figura 10: Sistema de coordenadas](/images/articles/introduccion-al-desarrollo-de-videojuegos-con-pico-8/sistema-de-coordenadas.png)(width:384)
 
-![Figura 11: Ejemplo de posición de un sprite](/images/blog/introduccion-al-desarrollo-de-videojuegos-con-pico-8/ejemplo-sprite.png)(width:384)
+![Figura 11: Ejemplo de posición de un sprite](/images/articles/introduccion-al-desarrollo-de-videojuegos-con-pico-8/ejemplo-sprite.png)(width:384)
 
 Sabiendo todo esto, ahora podemos hacer que Bunny se mueva por la pantalla:
 
@@ -434,9 +434,9 @@ end
 
 La función `rectfill` sirve para dibujar rectángulos, esta además recibe diferentes parámetros: los dos primeros indican la posición de la esquina superior izquierda del rectángulo —`padx` y `pady`—, los otros dos indican la posición de la esquina inferior derecha del rectángulo —`padx + padw` y `pady + padh`—, y el último indica el color —`15`— (figura 13).
 
-![Figura 12: Juego Squashy](/images/blog/introduccion-al-desarrollo-de-videojuegos-con-pico-8/sistema-de-coordenadas.png)(width:384)
+![Figura 12: Juego Squashy](/images/articles/introduccion-al-desarrollo-de-videojuegos-con-pico-8/sistema-de-coordenadas.png)(width:384)
 
-![Figura 13: Ejemplo de dibujado de un rectángulo](/images/blog/introduccion-al-desarrollo-de-videojuegos-con-pico-8/ejemplo-rectangulo.png)(width:384)
+![Figura 13: Ejemplo de dibujado de un rectángulo](/images/articles/introduccion-al-desarrollo-de-videojuegos-con-pico-8/ejemplo-rectangulo.png)(width:384)
 
 ### 3.2. Añadiendo la pelota
 
@@ -562,9 +562,9 @@ end
 
 En esta nueva función se llama a `sfx(1)` y no al `sfx` de siempre, esto es así porque reproducirá un efecto de sonido diferente y por esa misma razón tendrá que crear un nuevo efecto de sonido, en mi caso creé el que se puede ver en la figura 15.
 
-![Figura 14: Primer efecto de sonido](/images/blog/introduccion-al-desarrollo-de-videojuegos-con-pico-8/sfx-1.png)(width:384)
+![Figura 14: Primer efecto de sonido](/images/articles/introduccion-al-desarrollo-de-videojuegos-con-pico-8/sfx-1.png)(width:384)
 
-![Figura 15: Segundo efecto de sonido](/images/blog/introduccion-al-desarrollo-de-videojuegos-con-pico-8/sfx-2.png)(width:384)
+![Figura 15: Segundo efecto de sonido](/images/articles/introduccion-al-desarrollo-de-videojuegos-con-pico-8/sfx-2.png)(width:384)
 
 ### 3.7. Puntuación
 
@@ -596,7 +596,7 @@ Aunque no lo mencioné anteriormente, la función `print` también puede recibir
 
 Para indicar la vida del jugador vamos a usar corazones, como se muestra en la figura 16 —aunque para ello se tendrá que borrar a Bunny—. Para esta tarea se debe crear una una variable `lives = 3` y modificar la función `_draw`:
 
-![Figura 16: Pixelart de un corazón](/images/blog/introduccion-al-desarrollo-de-videojuegos-con-pico-8/corazon.png)(width:384)
+![Figura 16: Pixelart de un corazón](/images/articles/introduccion-al-desarrollo-de-videojuegos-con-pico-8/corazon.png)(width:384)
 
 ```lua
 lives = 3

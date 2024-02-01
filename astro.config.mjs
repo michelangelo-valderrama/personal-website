@@ -9,19 +9,20 @@ import { rehypeHeadingIds } from "@astrojs/markdown-remark";
 import { remarkImageOptimization, remarkReadingTime, rehypeLinkHeading } from "./plugins/index";
 import remarkImgAttr from "remark-imgattr";
 import remarkMath from "remark-math";
-import remarkToc from "remark-toc";
+import remarkToc from "remark-toc"; // remove?
 import rehypeKatex from "rehype-katex";
 /* others */
 import theme from "./public/vercel-theme.json";
 import sitemap from "@astrojs/sitemap";
-const site = "http://localhost:4321/";
+
+const site = "https://imangelo.dev";
 
 
 // https://astro.build/config
 export default defineConfig({
   site,
   markdown: {
-    remarkPlugins: [remarkToc, remarkMath, remarkImgAttr, [remarkImageOptimization, {
+    remarkPlugins: [remarkMath, remarkImgAttr, [remarkImageOptimization, {
       figure: true
     }], remarkReadingTime],
     rehypePlugins: [rehypeHeadingIds, rehypeLinkHeading, rehypeKatex]

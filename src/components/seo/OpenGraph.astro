@@ -1,0 +1,40 @@
+---
+interface Props {
+  title?: string
+  description?: string
+  type?: "website" | "article"
+  url?: string
+  locale?: string
+  site_name?: string
+  image?: {
+    src?: string | URL
+    alt?: string
+    width?: string | number
+    height?: string | number
+  }
+}
+
+const {
+  title,
+  description,
+  type = "website",
+  url = Astro.url,
+  locale,
+  site_name,
+  image = {},
+} = Astro.props
+
+const { alt, height, src, width } = image
+---
+
+{/* OpenGraph Tags */}
+{title ? <meta property="og:title" content={title} /> : null}
+{type ? <meta property="og:type" content={type} /> : null}
+{url ? <meta property="og:url" content={url} /> : null}
+{locale ? <meta property="og:locale" content="es_ES" /> : null}
+{description ? <meta property="og:description" content={description} /> : null}
+{site_name ? <meta property="og:site_name" content={site_name} /> : null}
+{src ? <meta property="og:image" content={src} /> : null}
+{alt ? <meta property="og:image:alt" content={alt} /> : null}
+{width ? <meta property="og:image:width" content={`${width}`} /> : null}
+{height ? <meta property="og:image:height" content={`${height}`} /> : null}

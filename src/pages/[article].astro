@@ -7,6 +7,9 @@ import Layout from "@/layouts/Layout.astro"
 import Prose from "@/components/Prose.astro"
 import SEO from "@/components/seo/SEO.astro"
 import LucideIcon from "@/components/LucideIcon.astro"
+import { SITE } from "@/consts"
+import ArticleSEO from "@/components/seo/ArticleSEO.astro"
+import { parseArticleImage } from "@/utils"
 
 export const getStaticPaths = (async () => {
   const articles = await getCollection("articles")
@@ -15,19 +18,29 @@ export const getStaticPaths = (async () => {
     props: a,
   }))
 }) satisfies GetStaticPaths
+
 type Props = CollectionEntry<"articles">
+
 const { render, data } = Astro.props
 const { Content, remarkPluginFrontmatter } = await render()
+
+const image = parseArticleImage(Astro.props)
 ---
 
 <Root>
-  <SEO slot="meta" title={data.title} description={data.description} />
+  <SEO
+    slot="meta"
+    title={`${data.title} - ${SITE.TITLE}`}
+    description={data.description}
+    image={{ src: image, alt: data.title }}
+  />
+  <ArticleSEO slot="meta" article={Astro.props} {image} />
   <link
     slot="meta"
     href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css"
     rel="stylesheet"
   />
-  <Layout class="pt-24 md:pt-32 mb-[90svh]">
+  <Layout class="pt-24 md:pt-32 mb-[80svh]">
     <div class="mb-6">
       <a
         href="/"
@@ -49,7 +62,6 @@ const { Content, remarkPluginFrontmatter } = await render()
             </time>
           </span>
           <span>{remarkPluginFrontmatter.minutesRead}</span>
-          <!-- <span class="rounded-lg bg-muted/60 px-2 py-0.5">{remarkPluginFrontmatter.minutesRead}</span> -->
         </div>
       </header>
       <Content />

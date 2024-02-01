@@ -1,0 +1,91 @@
+---
+import type { CollectionEntry } from "astro:content"
+import { SITE } from "@/consts"
+
+interface Props {
+  article: CollectionEntry<"articles">
+  image: string | URL
+}
+
+const {
+  article: { data },
+  image,
+} = Astro.props
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: data.title,
+  image: [image],
+  datePublished: data.date,
+  dateModified: data.date,
+  author: [
+    {
+      "@type": "Person",
+      name: SITE.TITLE,
+      url: Astro.site,
+    },
+  ],
+}
+
+const postSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  mainEntityOfPage: {
+    "@type": "WebPage",
+    "@id": Astro.url,
+  },
+  headline: data.title,
+  description: data.description,
+  image: [image],
+  datePublished: data.date,
+  dateModified: data.date,
+  author: [
+    {
+      "@type": "Person",
+      name: SITE.AUTHOR,
+      url: Astro.site,
+    },
+  ],
+  publisher: {
+    "@type": "Organization",
+    name: SITE.TITLE,
+    logo: {
+      "@type": "ImageObject",
+      url: image.toString(),
+    },
+  },
+}
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      item: {
+        "@id": Astro.url,
+        name: data.title,
+      },
+    },
+  ],
+}
+---
+
+<meta property="article:publisher" content={Astro.site} />
+<meta property="article:author" content={SITE.AUTHOR} />
+{
+  data.tags
+    ? data.tags.map((tag) => <meta property="article:tag" content={tag} />)
+    : null
+}
+<meta property="article:published_time" content={data.date.toString()} />
+<meta property="article:modified_time" content={data.date.toString()} />
+
+<script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+<script type="application/ld+json" set:html={JSON.stringify(postSchema)} />
+<script
+  type="application/ld+json"
+  set:html={JSON.stringify(breadcrumbSchema)}
+/>
