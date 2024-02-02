@@ -1,0 +1,18 @@
+---
+import { SITE } from "@/consts"
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: SITE.TITLE,
+  alternateName: SITE.AUTHOR,
+  url: SITE.URL,
+  logo: SITE.LOGO,
+  sameAs: Object.keys(SITE.SOCIAL),
+}
+---
+
+<script
+  type="application/ld+json"
+  set:html={JSON.stringify(organizationSchema)}
+/>

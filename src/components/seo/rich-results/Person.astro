@@ -1,0 +1,19 @@
+---
+import { SITE } from "@/consts"
+
+const personSchema = {
+  "@context": "https://schema.org/",
+  "@type": "Person",
+  name: SITE.AUTHOR,
+  url: "https://imangelo.dev",
+  image: "https://imangelo.dev/banner.png",
+  sameAs: Object.keys(SITE.SOCIAL),
+  jobTitle: "Full-Stack Web Developer",
+  worksFor: {
+    "@type": "Organization",
+    name: "IF7SPORTS",
+  },
+}
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(personSchema)} />

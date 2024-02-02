@@ -4,6 +4,7 @@ import Layout from "@/layouts/Layout.astro"
 import Root from "@/layouts/Root.astro"
 import Articles from "@/components/Articles.astro"
 import SEO from "@/components/seo/SEO.astro"
+import HomeSEO from "@/components/seo/HomeSEO.astro"
 ---
 
 <Root>
@@ -18,6 +19,7 @@ import SEO from "@/components/seo/SEO.astro"
       height: SITE.IMAGE_HEIGHT,
     }}
   />
+  <HomeSEO slot="meta" />
   <Layout class="pt-24 md:pt-32 mb-20">
     <header>
       <section
