@@ -9,7 +9,6 @@ import { rehypeHeadingIds } from "@astrojs/markdown-remark";
 import { remarkImageOptimization, remarkReadingTime, rehypeLinkHeading } from "./plugins/index";
 import remarkImgAttr from "remark-imgattr";
 import remarkMath from "remark-math";
-import remarkToc from "remark-toc"; // remove?
 import rehypeKatex from "rehype-katex";
 /* others */
 import theme from "./public/vercel-theme.json";
