@@ -1,5 +1,6 @@
 import { defineConfig } from "astro/config";
 /* integrations */
+import vercelStatic from '@astrojs/vercel/static';
 import tailwind from "@astrojs/tailwind";
 import react from "@astrojs/react";
 import mdx from "@astrojs/mdx";
@@ -13,12 +14,14 @@ import rehypeKatex from "rehype-katex";
 /* others */
 import theme from "./public/vercel-theme.json";
 import sitemap from "@astrojs/sitemap";
-
+import vercel from "@astrojs/vercel/serverless";
 const site = "https://imangelo.dev";
 
 
 // https://astro.build/config
 export default defineConfig({
+  output: "static",
+  adapter: vercelStatic(),
   site,
   markdown: {
     remarkPlugins: [remarkMath, remarkImgAttr, [remarkImageOptimization, {
@@ -42,5 +45,7 @@ export default defineConfig({
         shadowColor: "transparent"
       }
     }
-  }), mdx(), sitemap()]
+  }), mdx(), sitemap()],
+  output: "server",
+  adapter: vercel()
 });
