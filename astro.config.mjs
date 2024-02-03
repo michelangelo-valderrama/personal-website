@@ -1,10 +1,10 @@
 import { defineConfig } from "astro/config";
 /* integrations */
-import vercelStatic from '@astrojs/vercel/static';
 import tailwind from "@astrojs/tailwind";
 import react from "@astrojs/react";
 import mdx from "@astrojs/mdx";
 import expressiveCode from "astro-expressive-code";
+import vercel from '@astrojs/vercel/static';
 /* plugins */
 import { rehypeHeadingIds } from "@astrojs/markdown-remark";
 import { remarkImageOptimization, remarkReadingTime, rehypeLinkHeading } from "./plugins/index";
@@ -14,14 +14,13 @@ import rehypeKatex from "rehype-katex";
 /* others */
 import theme from "./public/vercel-theme.json";
 import sitemap from "@astrojs/sitemap";
-import vercel from "@astrojs/vercel/serverless";
 const site = "https://imangelo.dev";
 
 
 // https://astro.build/config
 export default defineConfig({
   output: "static",
-  adapter: vercelStatic(),
+  adapter: vercel(),
   site,
   markdown: {
     remarkPlugins: [remarkMath, remarkImgAttr, [remarkImageOptimization, {
@@ -46,6 +45,4 @@ export default defineConfig({
       }
     }
   }), mdx(), sitemap()],
-  output: "server",
-  adapter: vercel()
 });
