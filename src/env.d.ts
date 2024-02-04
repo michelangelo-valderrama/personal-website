@@ -4,6 +4,7 @@
 interface ImportMetaEnv {
   readonly RESEND_API_KEY: string
   readonly PUBLIC_SITE_URL: string
+  readonly PUBLIC_API_URL: string
 }
 
 interface ImportMeta {

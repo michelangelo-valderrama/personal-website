@@ -1,11 +1,10 @@
 ---
 interface Props {
-  title: string
+  as: string
   class?: string
 }
 ---
 
-<section class={Astro.props.class}>
-  <h2 class="font-semibold mb-6" set:html={Astro.props.title} />
+<Astro.props.as class={Astro.props.class}>
   <slot />
-</section>
+</Astro.props.as>

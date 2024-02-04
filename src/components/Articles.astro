@@ -4,6 +4,7 @@ import ArticleLink from "./ArticleLink.astro"
 import ArticleYearGroup from "./ArticleYearGroup.astro"
 import Section from "./Section.astro"
 import { groupBy } from "@/utils"
+import { Newsletter } from "./newsletter"
 
 const articles = (await getCollection("articles"))
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
@@ -21,14 +22,20 @@ const years = Object.keys(articlesByYear).sort(
 )
 ---
 
-<Section class="mt-20" title="Artículos">
-  {
-    years.map((year) => (
-      <ArticleYearGroup {year}>
-        {articlesByYear[year].map(({ data: { title, date }, slug }) => (
-          <ArticleLink {title} {date} {slug} />
-        ))}
-      </ArticleYearGroup>
-    ))
-  }
+<Section as="section" class="mt-20">
+  <div class="mb-4 flex items-center justify-between">
+    <h2 class="font-semibold md:text-lg">Artículos</h2>
+    <Newsletter client:load />
+  </div>
+  <div>
+    {
+      years.map((year) => (
+        <ArticleYearGroup {year}>
+          {articlesByYear[year].map(({ data: { title, date }, slug }) => (
+            <ArticleLink {title} {date} {slug} />
+          ))}
+        </ArticleYearGroup>
+      ))
+    }
+  </div>
 </Section>
