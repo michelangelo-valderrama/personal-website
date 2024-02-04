@@ -4,7 +4,7 @@ import tailwind from "@astrojs/tailwind";
 import react from "@astrojs/react";
 import mdx from "@astrojs/mdx";
 import expressiveCode from "astro-expressive-code";
-import vercel from '@astrojs/vercel/static';
+import vercel from '@astrojs/vercel/serverless';
 /* plugins */
 import { rehypeHeadingIds } from "@astrojs/markdown-remark";
 import { remarkImageOptimization, remarkReadingTime, rehypeLinkHeading } from "./plugins/index";
@@ -19,9 +19,12 @@ const site = "https://imangelo.dev";
 
 // https://astro.build/config
 export default defineConfig({
-  output: "static",
+  output: "hybrid",
   adapter: vercel(),
   site,
+  devToolbar: {
+    enabled: false
+  },
   markdown: {
     remarkPlugins: [remarkMath, remarkImgAttr, [remarkImageOptimization, {
       figure: true

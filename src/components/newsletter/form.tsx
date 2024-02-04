@@ -53,7 +53,7 @@ export const NewsletterForm = ({ className }: React.ComponentProps<"form">) => {
     e.preventDefault()
     try {
       setLoading(true)
-      await subscribeNewsletter({ email: email.input.value, name: email.input.value })
+      await subscribeNewsletter({ email: email.input.value, firstName: name.input.value })
       email.setValue("")
       name.setValue("")
       setSend({
@@ -61,10 +61,16 @@ export const NewsletterForm = ({ className }: React.ComponentProps<"form">) => {
         message: "Suscripción realizada con éxito"
       })
     } catch (error) {
+      if ((error as any).message) {
+        return setSend({
+          success: false,
+          message: (error as any).message
+        })
+      }
       console.log(error)
-      setSend({
+      return setSend({
         success: false,
-        message: "Error al intentar suscribirse. Vuelva a intentarlo más tarde"
+        message: "Error inesperado. Vuelva a intentarlo más tarde"
       })
     } finally {
       setLoading(false)

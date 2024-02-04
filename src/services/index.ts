@@ -1,15 +1,24 @@
-const apiUrl = import.meta.env.PUBLIC_API_URL
-
 export const subscribeNewsletter = async (data: {
   email: string
-  name: string
+  firstName: string
 }) => {
-  const resp = await fetch(`${apiUrl}/newsletter`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(data),
-  })
-  return resp.json
+  const { email, firstName } = data
+  try {
+    const response = await fetch(
+      `${import.meta.env.PUBLIC_API_URL}/addContact.json`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, firstName }),
+      }
+    )
+    const json = await response.json()
+    if (response.status !== 200 && response.status !== 201) throw json
+    return json
+  } catch (e) {
+    console.log(e)
+    throw e
+  }
 }
