@@ -8,8 +8,8 @@ export const POST: APIRoute = async ({ request }) => {
   try {
     const body = await request.json()
     const { email, firstName } = body
-    if (!email) throw { message: "Email is required" }
-    if (!firstName) throw { message: "FirstName is required" }
+    if (!email) throw { message: "Email es requerido" }
+    if (!firstName) throw { message: "FirstName es requerido" }
 
     const send = await resend.contacts.create({
       email,

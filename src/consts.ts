@@ -4,7 +4,7 @@ export const SOCIAL = {
 
 export const SITE = {
   URL: import.meta.env.PUBLIC_SITE_URL,
-  TITLE: "michelangelo",
+  TITLE: "Imangelo",
   BANNER: "/banner.png",
   BANNER_ALT: "Banner de imangelo.dev, por michelangelo",
   IMAGE_WIDTH: "1200",

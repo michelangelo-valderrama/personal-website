@@ -22,7 +22,7 @@ import { Button } from "../ui/button"
 import { NewsletterForm } from "./form"
 
 const text = {
-  title: "Newletter",
+  title: "Newsletter",
   description: "¿Quieres estar atento a mis futuros artículos?"
 }
 
@@ -32,7 +32,7 @@ interface Props {
 
 export function NewsletterModal({ children }: Props) {
   const [open, setOpen] = React.useState(false)
-  const isDesktop = useMediaQuery("(min-width: 768px)")
+  const isDesktop = useMediaQuery("(min-width: 644px)")
 
   if (isDesktop) {
     return (

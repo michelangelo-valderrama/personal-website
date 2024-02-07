@@ -50,9 +50,9 @@ const image = parseArticleImage(Astro.props)
         <span>Volver</span>
       </a>
     </div>
-    <Prose>
-      <header class="mb-10">
-        <h1 class="mb-3 font-serif">{data.title}</h1>
+    <article>
+      <header class="mb-10 flex flex-col gap-y-2">
+        <h1 class="font-serif text-4xl font-semibold lg:text-5xl">{data.title}</h1>
         <div
           class="text-muted-foreground text-xs md:text-sm flex items-center gap-x-2 *:border *:px-2.5 *:py-0.5 *:rounded-full"
         >
@@ -64,7 +64,9 @@ const image = parseArticleImage(Astro.props)
           <span>{remarkPluginFrontmatter.minutesRead}</span>
         </div>
       </header>
-      <Content />
-    </Prose>
+      <Prose>
+        <Content />
+      </Prose>
+    </article>
   </Layout>
 </Root>

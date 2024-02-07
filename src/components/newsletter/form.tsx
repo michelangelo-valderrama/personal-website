@@ -1,19 +1,15 @@
+import { useEffect, useState } from "react"
+import { ReloadIcon } from "@radix-ui/react-icons"
+import { randomName, validateEmail } from "@/utils"
+import { cn } from "@/lib/utils"
+import { subscribeNewsletter } from "@/services"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { randomName, validateEmail } from "@/utils"
-import { cn } from "@/lib/utils"
-import { useEffect, useState } from "react"
-import { ReloadIcon } from "@radix-ui/react-icons"
-import { subscribeNewsletter } from "@/services"
+import { useToast } from "@/components/ui/use-toast"
 
 interface UseFieldProps {
   type: React.HTMLInputTypeAttribute
-}
-
-interface Send {
-  success: boolean | null
-  message: string | null
 }
 
 const useField = ({ type }: UseFieldProps) => {
@@ -40,10 +36,13 @@ const validateForm = ({ email, name }: { [key: string]: string }) => {
   return false
 }
 
-export const NewsletterForm = ({ className }: React.ComponentProps<"form">) => {
+export function NewsletterForm({ className }: React.ComponentProps<"form">) {
+  const { toast } = useToast()
   const [loading, setLoading] = useState(false)
   const [placeholderName, setPlaceholderName] = useState("")
-  const [send, setSend] = useState<Send>({ success: null, message: null })
+
+  const email = useField({ type: "email" })
+  const name = useField({ type: "text" })
 
   useEffect(() => {
     setPlaceholderName(randomName())
@@ -56,29 +55,26 @@ export const NewsletterForm = ({ className }: React.ComponentProps<"form">) => {
       await subscribeNewsletter({ email: email.input.value, firstName: name.input.value })
       email.setValue("")
       name.setValue("")
-      setSend({
-        success: true,
-        message: "Suscripción realizada con éxito"
+      toast({
+        description: "Suscripción realizada con éxito",
       })
     } catch (error) {
+      let description: string;
       if ((error as any).message) {
-        return setSend({
-          success: false,
-          message: (error as any).message
-        })
+        description = (error as any).message
+      } else {
+        console.log(error)
+        description = "Vuelva a intentarlo más tarde"
       }
-      console.log(error)
-      return setSend({
-        success: false,
-        message: "Error inesperado. Vuelva a intentarlo más tarde"
+      toast({
+        variant: "destructive",
+        title: "Error inesperado",
+        description,
       })
     } finally {
       setLoading(false)
     }
   }
-
-  const email = useField({ type: "email" })
-  const name = useField({ type: "text" })
 
   return (
     <form className={cn("grid items-start gap-4", className)} onSubmit={onSubmit}>
@@ -90,11 +86,6 @@ export const NewsletterForm = ({ className }: React.ComponentProps<"form">) => {
         <Label htmlFor="name">Primer nombre</Label>
         <Input {...name.input} placeholder={placeholderName} />
       </div>
-      {send.success !== null && (
-        <p className={`text-xs ${send.success ? "text-green-400" : "text-red-500"}`}>
-          {send.message}
-        </p>
-      )}
       <Button className="gap-x-2"
         disabled={!validateForm({ email: email.input.value, name: name.input.value })}
         type="submit"

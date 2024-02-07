@@ -1,5 +1,6 @@
 ---
 import Footer from "@/components/Footer.astro"
+import { Toaster } from "@/components/ui/toaster"
 ---
 
 <main
@@ -12,4 +13,5 @@ import Footer from "@/components/Footer.astro"
   >
   </div>
 </main>
+<Toaster client:load />
 <Footer />
