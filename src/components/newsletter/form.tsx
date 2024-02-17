@@ -8,6 +8,10 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { useToast } from "@/components/ui/use-toast"
 
+interface Props extends React.ComponentProps<"form"> {
+  responsive?: boolean
+}
+
 interface UseFieldProps {
   type: React.HTMLInputTypeAttribute
 }
@@ -36,7 +40,7 @@ const validateForm = ({ email, name }: { [key: string]: string }) => {
   return false
 }
 
-export function NewsletterForm({ className }: React.ComponentProps<"form">) {
+export function NewsletterForm({ className, responsive }: Props) {
   const { toast } = useToast()
   const [loading, setLoading] = useState(false)
   const [placeholderName, setPlaceholderName] = useState("")
@@ -77,25 +81,27 @@ export function NewsletterForm({ className }: React.ComponentProps<"form">) {
   }
 
   return (
-    <form className={cn("grid items-start gap-4", className)} onSubmit={onSubmit}>
-      <div className="grid gap-2">
-        <Label htmlFor="email">Correo electrónico</Label>
-        <Input {...email.input} placeholder="email@example.com" />
-      </div>
-      <div className="grid gap-2">
+    <form className={cn("flex flex-col gap-4", `${responsive && "sm:flex-row"} ${className}`)} onSubmit={onSubmit}>
+      <div className={cn("grid gap-2", `${responsive && "sm:max-w-[8rem]"}`)}>
         <Label htmlFor="name">Primer nombre</Label>
         <Input {...name.input} placeholder={placeholderName} />
       </div>
-      <Button className="gap-x-2"
-        disabled={!validateForm({ email: email.input.value, name: name.input.value })}
-        type="submit"
-      >
-        <span>Suscribirse</span>
-        {
-          loading
-          && (<ReloadIcon className="size-4 animate-spin" />)
-        }
-      </Button>
+      <div className="grid gap-2 flex-1">
+        <Label htmlFor="email">Correo electrónico</Label>
+        <Input {...email.input} placeholder="email@example.com" />
+      </div>
+      <div className="flex items-end">
+        <Button className="gap-x-2 flex-1"
+          disabled={!validateForm({ email: email.input.value, name: name.input.value })}
+          type="submit"
+        >
+          <span>Suscribirse</span>
+          {
+            loading
+            && (<ReloadIcon className="size-4 animate-spin" />)
+          }
+        </Button>
+      </div>
     </form>
   )
 }

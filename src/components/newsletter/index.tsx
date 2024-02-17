@@ -4,7 +4,7 @@ import { Send } from "lucide-react";
 
 export const Newsletter = () => (
   <NewsletterModal>
-    <Button size="icon" variant="ghost">
+    <Button size="icon" variant="outline">
       <Send className="size-4"></Send>
     </Button>
   </NewsletterModal>
