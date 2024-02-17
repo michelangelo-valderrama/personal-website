@@ -6,6 +6,7 @@ export const Newsletter = () => (
   <NewsletterModal>
     <Button size="icon" variant="outline">
       <Send className="size-4"></Send>
+      <span className="sr-only">Newsletter</span>
     </Button>
   </NewsletterModal>
 )
