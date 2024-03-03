@@ -1,16 +1,10 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { ReloadIcon } from "@radix-ui/react-icons"
-import { randomName, validateEmail } from "@/utils"
-import { cn } from "@/lib/utils"
+import { validateEmail } from "@/utils"
 import { subscribeNewsletter } from "@/services"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
 import { useToast } from "@/components/ui/use-toast"
-
-interface Props extends React.ComponentProps<"form"> {
-  responsive?: boolean
-}
 
 interface UseFieldProps {
   type: React.HTMLInputTypeAttribute
@@ -33,32 +27,23 @@ const useField = ({ type }: UseFieldProps) => {
   }
 }
 
-const validateForm = ({ email, name }: { [key: string]: string }) => {
-  if (validateEmail(email) && (name.length > 3 && name.length < 50)) {
-    return true
-  }
+const validateForm = ({ email }: { [key: string]: string }) => {
+  if (validateEmail(email)) return true
   return false
 }
 
-export function NewsletterForm({ className, responsive }: Props) {
+export function NewsletterForm() {
   const { toast } = useToast()
   const [loading, setLoading] = useState(false)
-  const [placeholderName, setPlaceholderName] = useState("")
 
   const email = useField({ type: "email" })
-  const name = useField({ type: "text" })
-
-  useEffect(() => {
-    setPlaceholderName(randomName())
-  }, [])
 
   const onSubmit: React.FormEventHandler = async (e) => {
     e.preventDefault()
     try {
       setLoading(true)
-      await subscribeNewsletter({ email: email.input.value, firstName: name.input.value })
+      await subscribeNewsletter({ email: email.input.value })
       email.setValue("")
-      name.setValue("")
       toast({
         description: "Suscripción realizada con éxito",
       })
@@ -81,26 +66,25 @@ export function NewsletterForm({ className, responsive }: Props) {
   }
 
   return (
-    <form className={cn("flex flex-col gap-4", `${responsive && "sm:flex-row"} ${className}`)} onSubmit={onSubmit}>
-      <div className={cn("grid gap-2", `${responsive && "sm:max-w-[8rem]"}`)}>
-        <Label htmlFor="name">Primer nombre</Label>
-        <Input {...name.input} placeholder={placeholderName} />
-      </div>
-      <div className="grid gap-2 flex-1">
-        <Label htmlFor="email">Correo electrónico</Label>
-        <Input {...email.input} placeholder="email@example.com" />
-      </div>
-      <div className="flex items-end">
-        <Button className="gap-x-2 flex-1"
-          disabled={!validateForm({ email: email.input.value, name: name.input.value })}
-          type="submit"
-        >
-          <span>Suscribirse</span>
-          {
-            loading
-            && (<ReloadIcon className="size-4 animate-spin" />)
-          }
-        </Button>
+    <form onSubmit={onSubmit}>
+      <p className="text-sm text-muted-foreground mb-2 pointer-events-none select-none text-right">Mi newsletter</p>
+      <div className="flex gap-2 p-1 bg-muted rounded-lg">
+        <div className="flex-1">
+          <Input className="truncate" {...email.input} placeholder="email@example.com" />
+        </div>
+        <div>
+          <Button
+            disabled={!validateForm({ email: email.input.value })}
+            className="gap-x-2 bg-background text-foreground hover:bg-background/60"
+            type="submit"
+          >
+            {
+              loading
+                ? (<ReloadIcon className="size-4 animate-spin" />)
+                : (<span>Suscribirse</span>)
+            }
+          </Button>
+        </div>
       </div>
     </form>
   )

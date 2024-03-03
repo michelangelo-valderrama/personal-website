@@ -1,17 +1,14 @@
-export const subscribeNewsletter = async (data: {
-  email: string
-  firstName: string
-}) => {
-  const { email, firstName } = data
+export const subscribeNewsletter = async (data: { email: string }) => {
+  const { email } = data
   try {
     const response = await fetch(
-      `${import.meta.env.PUBLIC_API_URL}/addContact.json`,
+      `${import.meta.env.PUBLIC_API_URL}/subscribe.json`,
       {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ email, firstName }),
+        body: JSON.stringify({ email }),
       }
     )
     const json = await response.json()

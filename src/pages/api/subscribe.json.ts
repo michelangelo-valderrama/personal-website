@@ -7,13 +7,11 @@ const resend = new Resend(import.meta.env.RESEND_API_KEY)
 export const POST: APIRoute = async ({ request }) => {
   try {
     const body = await request.json()
-    const { email, firstName } = body
+    const { email } = body
     if (!email) throw { message: "Email es requerido" }
-    if (!firstName) throw { message: "FirstName es requerido" }
 
     const send = await resend.contacts.create({
       email,
-      firstName,
       unsubscribed: false,
       audienceId: import.meta.env.RESEND_AUDIENCE_ID,
     })

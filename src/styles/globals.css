@@ -16,7 +16,8 @@
   h4 {
     @apply text-balance;
   }
-  p {
+  p,
+  figcaption {
     @apply text-pretty;
   }
 }

@@ -106,7 +106,7 @@ module.exports = {
               "@apply relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm font-normal":
                 "",
             },
-            img: { "@apply mx-auto border shadow": "" },
+            img: { "@apply mx-auto border shadow bg-white": "" },
             figcaption: { "@apply text-center": "" },
             ".h-icon": {
               "@apply no-underline text-muted-foreground before:content-['§_']":

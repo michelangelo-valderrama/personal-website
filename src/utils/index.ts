@@ -19,21 +19,3 @@ export const parseArticleImage = (article: CollectionEntry<"articles">) =>
 export const validateEmail = (value: string) => {
   return /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/g.test(value)
 }
-
-export const randomNumber = (x: number) => Math.trunc(Math.random() * x)
-
-export const randomName = () => {
-  const names = [
-    "Alejandro",
-    "Isabella",
-    "Diego",
-    "Sophia",
-    "Mateo",
-    "Olivia",
-    "Santiago",
-    "Emma",
-    "Lucas",
-    "Mia",
-  ]
-  return names[randomNumber(names.length)]
-}

@@ -4,25 +4,49 @@ import GitHubIcon from "@/icons/GitHubIcon.astro"
 import LogoIcon from "@/icons/LogoIcon.astro"
 import LucideIcon from "./LucideIcon.astro"
 import FooterLink from "./FooterLink.astro"
+import { NewsletterForm } from "./newsletter/form"
 ---
 
-<footer class="border-t border-t-border/60 mb-16">
-  <div class="max-w-screen-sm mx-auto px-4 mt-6 flex items-center gap-x-2">
-    <FooterLink
-      href="https://github.com/michelangelo-valderrama"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <GitHubIcon class="size-5" />
-      <span class="sr-only">GitHub</span>
-    </FooterLink>
-    <FooterLink href="/rss.xml" target="_blank" rel="noopener noreferrer">
-      <LucideIcon class="size-5" icon={Rss} />
-      <span class="sr-only">RSS</span>
-    </FooterLink>
-    <FooterLink href="/" class="ml-auto">
-      <LogoIcon class="size-5" />
-      <span class="sr-only">Home</span>
-    </FooterLink>
+<footer class="border-t border-t-border/60 mb-20">
+  <div class="max-w-screen-sm mx-auto pt-7 px-4">
+    <div class="mb-9">
+      <div class="max-w-72 ml-auto">
+        <NewsletterForm client:visible />
+      </div>
+    </div>
+    <div class="space-y-2">
+      <div class="space-x-2.5">
+        <FooterLink href="/" class="size-6">
+          <LogoIcon class="size-5" />
+          <span class="sr-only">Home</span>
+        </FooterLink><FooterLink
+          href="https://github.com/michelangelo-valderrama"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="size-6"
+        >
+          <GitHubIcon class="size-5" />
+          <span class="sr-only">GitHub</span>
+        </FooterLink><FooterLink href="/rss.xml" target="_blank" class="size-6">
+          <LucideIcon class="size-5" icon={Rss} />
+          <span class="sr-only">RSS</span>
+        </FooterLink>
+      </div>
+      <div>
+        <p class="text-muted-foreground font-mono text-xs">
+          Creado con <a
+            class="text-foreground underline"
+            href="https://astro.build"
+            rel="noopener noreferrer"
+            target="_blank">Astro</a
+          >, publicado en <a
+            class="text-foreground underline"
+            href="https://vercel.com/home"
+            rel="noopener noreferrer"
+            target="_blank">Vercel</a
+          >.
+        </p>
+      </div>
+    </div>
   </div>
 </footer>
