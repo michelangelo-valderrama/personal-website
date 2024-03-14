@@ -78,18 +78,18 @@ module.exports = {
           css: {
             h1: { "@apply text-4xl font-semibold lg:text-5xl": "" },
             h2: {
-              "@apply text-3xl font-semibold first:mt-0 first-of-type:mt-6 md:first-of-type:mt-8":
+              "@apply text-2xl font-semibold first:mt-0 first-of-type:mt-4 md:first-of-type:mt-6":
                 "",
             },
-            h3: { "@apply text-2xl font-semibold": "" },
-            h4: { "@apply text-xl font-semibold": "" },
-            h5: { "@apply text-lg font-semibold": "" },
-            h6: { "@apply font-semibold": "" },
+            h3: { "@apply text-xl font-semibold": "" },
+            h4: { "@apply text-lg font-semibold": "" },
+            h5: { "@apply font-semibold": "" },
+            h6: { "@apply uppercase": "" },
             p: {
               "@apply leading-8 [&:not(:first-child)]:mt-6 text-pretty": "",
             },
             blockquote: {
-              "@apply mt-6 not-italic border-0 px-3 md:px-6 text-sm md:text-base": "",
+              "@apply mt-6 not-italic border-0 px-3 md:px-6": "",
               p: {
                 "@apply before:content-[''] md:text-base text-sm": "",
               },

@@ -1,6 +1,6 @@
 ---
-title: 'Implementando i18n en Astro'
-description: 'Pequeña guía de cómo implementar i18n en Astro para tener páginas en múltiples idiomas.'
+title: Implementando i18n en Astro
+description: Pequeña guía de cómo implementar i18n en Astro para tener páginas en múltiples idiomas.
 date: 2024-01-06
 tags:
   - Astro

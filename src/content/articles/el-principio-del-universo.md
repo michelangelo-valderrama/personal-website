@@ -1,7 +1,12 @@
 ---
 title: "El Principio del Universo: Desde las partículas hasta las primeras estrellas"
 description: Un artículo sobre la cronología del Big Bang, desde la época de Planck hasta la era de las estrellas pasando por las segregaciones de las fuerzas fundamentales, la inflación cósmica y la aparición de los elementos pesados.
-date: 2023-03-06
+date: 2023-03-07
+img:
+  src: https://physics.oregonstate.edu/sites/physics.oregonstate.edu/files/styles/1734_x_1110/public/2022-07/Quantum%20Cosmology%20Header.jpg?h=e719f4d8&itok=-ORCMfSK
+  alt: "Crédito: https://physics.oregonstate.edu/research/quantum-cosmology-and-foundations"
+  widht: 1734
+  height: 1110
 tags:
   - física
   - divulgación
@@ -11,7 +16,7 @@ tags:
 
 > Hay algo fascinante en la ciencia: con una mínima inversión en hechos se obtienen grandes rendimientos en conjeturas
 >
-> — Mark Twain, Vida en el Mississippi
+> — Mark Twain, _Vida en el Mississippi_
 
 ## Introducción
 
@@ -131,7 +136,7 @@ Estas primeras estrellas se conocen como _estrellas de Población III_. Las estr
 
 Las primeras galaxias se piensa que aparecieron alrededor de los primeros mil millones de años después del Big Bang. Estas protogalaxias serían cúmulos enormes de gases de hidrógeno y helio donde, conforme el universo se iba enfriando, se irían formando espacios más densos que otros que después formarían las primeras estrellas. Pero en este estapa hay más que estrellas y galaxias.
 
-Las estrellas supermasivas, al morir, explotan en supernovas y se convierten en una estrella de neutrones o en un agujero negro —un espacio en el universo en el que la fuerza gravitatoria es tan brutal que ni siquiera la luz puede escapar de él—. Los agujeros negros fueron durante muchos años vistos como una curiosidad consecuencia de la relatividad general, no se creía que algo así podría existir en la realidad. Hoy día hemos sido capaces de fotografiar a dos agujeros negros: **M87** y **Sagitarius A**, este último se encuentra en el centro de nuestra galaxia y es más de cien mil millones de veces más masivo que la Tierra.
+Las estrellas supermasivas, al morir, explotan en supernovas y se convierten en una estrella de neutrones o en un agujero negro —un espacio en el universo en el que la fuerza gravitatoria es tan brutal que ni siquiera la luz puede escapar de él—. Los agujeros negros fueron durante muchos años vistos como una curiosidad consecuencia de la relatividad general, no se creía que algo así podría existir en la realidad. Hoy día hemos sido capaces de fotografiar a dos agujeros negros: **M87** y **Sagitarius A\***, este último se encuentra en el centro de nuestra galaxia y es más de cien mil millones de veces más masivo que la Tierra.
 
 ---
 

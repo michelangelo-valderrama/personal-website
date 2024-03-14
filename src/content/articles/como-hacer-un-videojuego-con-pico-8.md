@@ -1,7 +1,12 @@
 ---
-title: "Cómo hacer un videojuego con PICO-8"
+title: Cómo hacer un videojuego con PICO-8
 description: Tutorial de cómo programar un videojuego en PICO-8.
 date: 2023-03-06
+img:
+  src: "%s/%p/pico-8.webp"
+  alt: "Crédito: https://www.steamgriddb.com/grid/163642"
+  width: 920
+  height: 430
 tags:
   - gamedev
   - lua
@@ -14,7 +19,7 @@ tags:
 **PICO-8** es un motor de videojuegos relativamente conocido creado por Joseph White, aka _zep_. Con PICO-8, Joseph quería crear una consola con la que poder jugar videojuegos sencillos y a la vez poder desarrollarlos en la misma consola, como en una Commodore 64. Buscaba que fuera fácil de manejar, simple y, sobre todo, autosuficiente: que contenga todo lo necesario para desarrollar un videojuego sin necesidad de usar programas externos. Así nació el concepto de _fantasy console_, que vendría a ser un emulador de una consola que no
 existe, con todas las limitaciones que podría tener. Debido al minimaslismo y su potencial, PICO-8 se volvió muy usado en Game Jams. Puede entrar a su [página oficial](https://www.lexaloffle.com/pico-8.php) y jugar algunos videojuegos hechos por la comunidad (figura 1).
 
-![Figura 1: Screenshot de Poom](/images/articles/introduccion-al-desarrollo-de-videojuegos-con-pico-8/screenshot-de-poom.png)(width:384)
+![Figura 1: Screenshot de Poom](/images/articles/como-hacer-un-videojuego-con-pico-8/screenshot-de-poom.png)(width:384)
 
 Lo que nos interesa de todo esto es que, el año pasado, Joseph publicó una versión de PICO-8 totalmente gratuita que funciona en la web, que es con la que voy a trabajar durante todo este artículo.
 
@@ -24,9 +29,9 @@ Para hacer un videojuego se necesitan conocimientos en diversas materias, pero a
 
 Entre al siguiente enlace: <https://www.pico-8-edu.com>. Al principio solo verá unas letras blancas sobre un fondo negro (figura 2), está en el **Modo Comando**. Si escribe `help` verá una lista de comandos y, abajo del todo, verá que dice que presione `ESC` para cambiar al **Modo Editor**. Si hace lo que se dice verá una pantalla tal y como se muestra en la figura 3. También verá diferentes pestañas, en la que está usted ahora mismo es el **Editor de Código**.
 
-![Figura 2: Terminal de PICO-8](/images/articles/introduccion-al-desarrollo-de-videojuegos-con-pico-8/terminal-pico8.png)(width:384)
+![Figura 2: Terminal de PICO-8](/images/articles/como-hacer-un-videojuego-con-pico-8/terminal-pico8.png)(width:384)
 
-![Figura 3: Editor de código](/images/articles/introduccion-al-desarrollo-de-videojuegos-con-pico-8/editor-de-codigo.png)(width:384)
+![Figura 3: Editor de código](/images/articles/como-hacer-un-videojuego-con-pico-8/editor-de-codigo.png)(width:384)
 
 ### 2.1. Funciones y tipos de datos
 
@@ -38,9 +43,9 @@ print("hello, world!")
 
 No utilice mayúsculas, el tipo de fuente de PICO-8 por defecto solo utiliza las minúsculas para las letras, en cambio las mayúsculas están reservadas para otros caracteres especiales. Por ahora, presione `ESC`, escriba `run` en la línea de comandos y presiones la tecla `ENTER`. Tendría que ver algo como se muestra en la figura 5, si es así, ¡felicidades!, ahora puede presumir oficialmente de haber programado algo, sino es así revise si ha seguido bien todos lo pasos.
 
-![Figura 4: Hello, world!](/images/articles/introduccion-al-desarrollo-de-videojuegos-con-pico-8/hola-mundo.png)(width:384)
+![Figura 4: Hello, world!](/images/articles/como-hacer-un-videojuego-con-pico-8/hola-mundo.png)(width:384)
 
-![Figura 5: Ejecutar un programa](/images/articles/introduccion-al-desarrollo-de-videojuegos-con-pico-8/ejecutar-programa.png)(width:384)
+![Figura 5: Ejecutar un programa](/images/articles/como-hacer-un-videojuego-con-pico-8/ejecutar-programa.png)(width:384)
 
 > Nota: A partir de ahora, en los bloques de código si al final del todo aparece `> run` y después le siguen otras lineas significará que se ha ejecutado el programa y en las líneas se mostrará lo que tendría que salirle en pantalla.
 
@@ -225,9 +230,9 @@ end
 
 Si presiona `X` verá como aparece `Has presionado x`. En la figura 6 podrá ver los números que tiene asignado cada tecla, aunque... ¿se acuerda que anteriormente dije que las mayúsculas estaban reservadas para caracteres especiales? (figura 7).
 
-![Figura 6: Pequeño Cheat Sheet de PICO-8](/images/articles/introduccion-al-desarrollo-de-videojuegos-con-pico-8/mini-cheat-sheet.png)(width:384)
+![Figura 6: Pequeño Cheat Sheet de PICO-8](/images/articles/como-hacer-un-videojuego-con-pico-8/mini-cheat-sheet.png)(width:384)
 
-![Figura 7: Algunas letras especiales de PICO-8](/images/articles/introduccion-al-desarrollo-de-videojuegos-con-pico-8/letras-reservadas.png)(width:384)
+![Figura 7: Algunas letras especiales de PICO-8](/images/articles/como-hacer-un-videojuego-con-pico-8/letras-reservadas.png)(width:384)
 
 > Si ve que tiene la pantalla de comandos muy sucia, puede ejecutar el comando `cls` para limpiarla.
 
@@ -294,9 +299,9 @@ end
 
 Para empezar a hacer cosas más interesantes vaya a la segunda pestaña: el **Editor de Sprites** (figura 8). Una vez ahí, puede dibujar —con una resolución de 8 por 8 píxeles— el personaje que quiera, en mi caso dibujé un conejito al que llamaré Bunny (figura 9).
 
-![Figura 8: Editor de sprites](/images/articles/introduccion-al-desarrollo-de-videojuegos-con-pico-8/editor-de-sprites.png)(width:384)
+![Figura 8: Editor de sprites](/images/articles/como-hacer-un-videojuego-con-pico-8/editor-de-sprites.png)(width:384)
 
-![Figura 9: Pixelart de Bunny](/images/articles/introduccion-al-desarrollo-de-videojuegos-con-pico-8/bunny.png)(width:384)
+![Figura 9: Pixelart de Bunny](/images/articles/como-hacer-un-videojuego-con-pico-8/bunny.png)(width:384)
 
 Para hacer que este _sprite_ se dibuje en pantalla deberá escribir lo siguiente:
 
@@ -314,9 +319,9 @@ La función `spr` puede recibir más parámetros como la posición del sprite �
 
 La posición de un punto viene determinado por una coordenada en el eje `x` y en el eje `y`. El valor de `x` es la distancia del punto al lado izquiero de la pantalla, mientras que el valor de `y` es la distancia del punto al lado superior de la pantalla (figura 10). Así, la esquina superior izquierda es el _punto de origen_ o punto `(0,0)`. Por defecto, el punto de un sprite no es el centro del sprite, es su esquina superior izquierda (figura 11).
 
-![Figura 10: Sistema de coordenadas](/images/articles/introduccion-al-desarrollo-de-videojuegos-con-pico-8/sistema-de-coordenadas.png)(width:384)
+![Figura 10: Sistema de coordenadas](/images/articles/como-hacer-un-videojuego-con-pico-8/sistema-de-coordenadas.png)(width:384)
 
-![Figura 11: Ejemplo de posición de un sprite](/images/articles/introduccion-al-desarrollo-de-videojuegos-con-pico-8/ejemplo-sprite.png)(width:384)
+![Figura 11: Ejemplo de posición de un sprite](/images/articles/como-hacer-un-videojuego-con-pico-8/ejemplo-sprite.png)(width:384)
 
 Sabiendo todo esto, ahora podemos hacer que Bunny se mueva por la pantalla:
 
@@ -329,9 +334,11 @@ function move_bunny()
   if (btn(2)) then y -= 1 end
   if (btn(3)) then y += 1 end
 end
+
 function _update()
   move_bunny()
 end
+
 function _draw()
   cls()
   spr(1, x, y)
@@ -368,6 +375,7 @@ Aquí otro ejemplo:
 ```lua
 function _draw()
   cls()
+
   for i = 1, 10 do
     spr(1, i^2, 60)
     print(i^2)
@@ -382,6 +390,7 @@ Por último, un ejemplo que no tiene por qué entender, pero que es interesante:
 ```lua
 function _draw()
   cls()
+
   for i = 0, 15 do
     x = 64 + cos(t() / 2 + i / 16) * 40
     y = 64 + sin(t() / 4 + i / 16) * 40
@@ -420,9 +429,11 @@ function movepaddle()
     padx += steps
   end
 end
+
 function _update()
   movepaddle()
 end
+
 function _draw()
   --clear the screen
   rectfill(0, 0, 128, 128, 3)
@@ -434,9 +445,9 @@ end
 
 La función `rectfill` sirve para dibujar rectángulos, esta además recibe diferentes parámetros: los dos primeros indican la posición de la esquina superior izquierda del rectángulo —`padx` y `pady`—, los otros dos indican la posición de la esquina inferior derecha del rectángulo —`padx + padw` y `pady + padh`—, y el último indica el color —`15`— (figura 13).
 
-![Figura 12: Juego Squashy](/images/articles/introduccion-al-desarrollo-de-videojuegos-con-pico-8/sistema-de-coordenadas.png)(width:384)
+![Figura 12: Juego Squashy](/images/articles/como-hacer-un-videojuego-con-pico-8/sistema-de-coordenadas.png)(width:384)
 
-![Figura 13: Ejemplo de dibujado de un rectángulo](/images/articles/introduccion-al-desarrollo-de-videojuegos-con-pico-8/ejemplo-rectangulo.png)(width:384)
+![Figura 13: Ejemplo de dibujado de un rectángulo](/images/articles/como-hacer-un-videojuego-con-pico-8/ejemplo-rectangulo.png)(width:384)
 
 ### 3.2. Añadiendo la pelota
 
@@ -502,6 +513,7 @@ function bounceball()
     sfx(0)
   end
 end
+
 function _update()
   movepaddle()
   moveball()
@@ -515,6 +527,8 @@ Dentro de la función `bounceball` hay un primer apartado —`--left`—, donde 
 pelota_ —`ballx`— _es menor al ancho de la pelota_ —es decir, si `ballx < 3`; parecería más intuitivo decir "si la posición horizontal de la pelota es menor a cero...", pero en ese caso se vería a la pelota atravesar un poco la pantalla antes de rebotar—_, entonces se cambia la dirección de la pelota_ —`ballxdir = -ballxdir`— _y se llama a la función `sfx`_.
 
 La función `sfx` se utiliza para que suene un _efecto de sonido_. Para ello tiene que irse a la cuarta pestaña, el **Editor de Efectos**, y crear un efecto de sonido, en mi caso creé el que se puede ver en la figura 14.
+
+![Figura 14: Primer efecto de sonido](/images/articles/como-hacer-un-videojuego-con-pico-8/sfx-1.png)(width:384)
 
 ### 3.5. Golpear a la pelota
 
@@ -530,6 +544,7 @@ function bouncepaddle()
     ballydir = -ballydir
   end
 end
+
 function _update()
   movepaddle()
   moveball()
@@ -551,6 +566,7 @@ function losedeadball()
     bally = 24
   end
 end
+
 function _update()
   movepaddle()
   moveball()
@@ -562,9 +578,7 @@ end
 
 En esta nueva función se llama a `sfx(1)` y no al `sfx` de siempre, esto es así porque reproducirá un efecto de sonido diferente y por esa misma razón tendrá que crear un nuevo efecto de sonido, en mi caso creé el que se puede ver en la figura 15.
 
-![Figura 14: Primer efecto de sonido](/images/articles/introduccion-al-desarrollo-de-videojuegos-con-pico-8/sfx-1.png)(width:384)
-
-![Figura 15: Segundo efecto de sonido](/images/articles/introduccion-al-desarrollo-de-videojuegos-con-pico-8/sfx-2.png)(width:384)
+![Figura 15: Segundo efecto de sonido](/images/articles/como-hacer-un-videojuego-con-pico-8/sfx-2.png)(width:384)
 
 ### 3.7. Puntuación
 
@@ -572,13 +586,14 @@ Para añadir una puntuación, hace falta crear una variable `score = 0` y hacer 
 
 ```lua
 score = 0
+
 function bouncepaddle()
   if ballx >= padx and
     ballx <= padx + padw and
     bally > pady then
     sfx(0)
     ballydir = -ballydir
-    score += 10 -- <<<
+    score += 10
   end
 end
 ```
@@ -596,7 +611,7 @@ Aunque no lo mencioné anteriormente, la función `print` también puede recibir
 
 Para indicar la vida del jugador vamos a usar corazones, como se muestra en la figura 16 —aunque para ello se tendrá que borrar a Bunny—. Para esta tarea se debe crear una una variable `lives = 3` y modificar la función `_draw`:
 
-![Figura 16: Pixelart de un corazón](/images/articles/introduccion-al-desarrollo-de-videojuegos-con-pico-8/corazon.png)(width:384)
+![Figura 16: Pixelart de un corazón](/images/articles/como-hacer-un-videojuego-con-pico-8/corazon.png)(width:384)
 
 ```lua
 lives = 3
@@ -685,10 +700,12 @@ function movepaddle()
     padx += steps
   end
 end
+
 function moveball()
   ballx += ballxdir
   bally += ballydir
 end
+
 function bounceball()
   --left
   if ballx < ballsize then
@@ -706,16 +723,17 @@ function bounceball()
     sfx(0)
   end
 end
+
 function bouncepaddle()
   if ballx >= padx and
     ballx <= padx + padw and
-    bally > pady - padh and
-    bally < pady then
+    bally > pady then
     sfx(0)
     ballydir = -ballydir
     score += 10
   end
 end
+
 function losedeadball()
   if bally > 128 then
     if lives > 0 then
@@ -730,8 +748,9 @@ function losedeadball()
     end
   end
 end
+
 function _update()
-  if lives <= 0 then
+  if lives > 0 then
     movepaddle()
     moveball()
     bounceball()
@@ -739,6 +758,7 @@ function _update()
     losedeadball()
   end
 end
+
 function _draw()
   --clear the screen
   rectfill(0, 0, 128, 128, 3)
@@ -760,7 +780,9 @@ function _draw()
 end
 ```
 
-Para exportar vaya al **Modo Comando** y escriba `save squashy.png`, así se le descargará un archivo `.png`, si ese mismo archivo lo arrastra hasta PICO-8 se le cargará el juego.
+Para exportar ejecute el juego y presione `CTRL + 7`, después vaya al **Modo Comando** y escriba `save squashy.png`, así se le descargará un archivo `.png`, si ese mismo archivo lo arrastra hasta PICO-8 se le cargará el juego (figura 17).
+
+![Figura 17: Squashy exportado a PNG](/images/articles/como-hacer-un-videojuego-con-pico-8/squashy.p8.png)
 
 ## Referencias
 
