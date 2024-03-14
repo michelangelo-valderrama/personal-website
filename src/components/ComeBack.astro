@@ -1,0 +1,16 @@
+---
+import { ArrowLeft } from "lucide"
+import LucideIcon from "./LucideIcon.astro"
+import { cn } from "@/lib/utils"
+---
+
+<a
+  href="/"
+  class={cn(
+    "inline-flex items-center gap-x-2 text-muted-foreground hover:text-accent-foreground transition py-2 px-1 font-semibold text-sm",
+    Astro.props.class
+  )}
+>
+  <LucideIcon icon={ArrowLeft} class="size-4" />
+  <span>Volver</span>
+</a>

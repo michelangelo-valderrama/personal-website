@@ -1,0 +1,73 @@
+---
+import { Moon, Sun } from "lucide"
+import LucideIcon from "./LucideIcon.astro"
+import { Button } from "./ui/button"
+---
+
+<div class="space-x-1 text-muted-foreground">
+  <Button
+    id="light-theme"
+    size="icon"
+    variant="ghost"
+    className="rounded-full size-7"
+  >
+    <LucideIcon id="sun" icon={Sun} class="size-4" />
+    <span class="sr-only">Modo claro</span>
+  </Button><Button
+    id="dark-theme"
+    size="icon"
+    variant="ghost"
+    className="rounded-full size-7"
+  >
+    <LucideIcon id="moon" icon={Moon} class="size-4" />
+    <span class="sr-only">Modo oscuro</span>
+  </Button>
+</div>
+
+<script is:inline data-astro-rerun>
+  const STORAGE_THEME_ITEM = "theme"
+  const DARK_CLASS = "dark"
+  const LIGHT_CLASS = "light"
+  const BUTTON_ACTIVE_CLASSES = ["bg-accent", "text-accent-foreground"]
+  const triggerLightTheme = document.getElementById("light-theme")
+  const triggerDarkTheme = document.getElementById("dark-theme")
+
+  const theme = (() => {
+    if (
+      typeof localStorage !== "undefined" &&
+      localStorage.getItem(STORAGE_THEME_ITEM)
+    ) {
+      return localStorage.getItem(STORAGE_THEME_ITEM)
+    }
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      return DARK_CLASS
+    }
+    return LIGHT_CLASS
+  })()
+
+  if (theme === DARK_CLASS) {
+    document.documentElement.classList.add(DARK_CLASS)
+    triggerDarkTheme.classList.add(...BUTTON_ACTIVE_CLASSES)
+    triggerLightTheme.classList.remove(...BUTTON_ACTIVE_CLASSES)
+  } else {
+    document.documentElement.classList.remove(DARK_CLASS)
+    triggerLightTheme.classList.add(...BUTTON_ACTIVE_CLASSES)
+    triggerDarkTheme.classList.remove(...BUTTON_ACTIVE_CLASSES)
+  }
+
+  localStorage.setItem(STORAGE_THEME_ITEM, theme)
+
+  triggerLightTheme.addEventListener("click", () => {
+    document.documentElement.classList.remove(DARK_CLASS)
+    triggerLightTheme.classList.add(...BUTTON_ACTIVE_CLASSES)
+    triggerDarkTheme.classList.remove(...BUTTON_ACTIVE_CLASSES)
+    localStorage.setItem(STORAGE_THEME_ITEM, LIGHT_CLASS)
+  })
+
+  triggerDarkTheme.addEventListener("click", () => {
+    document.documentElement.classList.add(DARK_CLASS)
+    triggerDarkTheme.classList.add(...BUTTON_ACTIVE_CLASSES)
+    triggerLightTheme.classList.remove(...BUTTON_ACTIVE_CLASSES)
+    localStorage.setItem(STORAGE_THEME_ITEM, DARK_CLASS)
+  })
+</script>

@@ -78,7 +78,7 @@ module.exports = {
           css: {
             h1: { "@apply text-4xl font-semibold lg:text-5xl": "" },
             h2: {
-              "@apply border-b pb-2 text-3xl font-semibold first:mt-0 first-of-type:mt-6 md:first-of-type:mt-8":
+              "@apply text-3xl font-semibold first:mt-0 first-of-type:mt-6 md:first-of-type:mt-8":
                 "",
             },
             h3: { "@apply text-2xl font-semibold": "" },
@@ -89,7 +89,10 @@ module.exports = {
               "@apply leading-8 [&:not(:first-child)]:mt-6 text-pretty": "",
             },
             blockquote: {
-              "@apply mt-6 border-l-2 border-l-border/80 pl-6 italic": "",
+              "@apply mt-6 not-italic border-0 px-3 md:px-6 text-sm md:text-base": "",
+              p: {
+                "@apply before:content-[''] md:text-base text-sm": "",
+              },
             },
             table: { "@apply w-full": "" },
             tr: { "@apply m-0 border-t p-0 even:bg-muted/40": "" },

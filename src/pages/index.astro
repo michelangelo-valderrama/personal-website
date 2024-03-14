@@ -10,14 +10,9 @@ import HomeSEO from "@/components/seo/HomeSEO.astro"
 <Root>
   <SEO
     slot="meta"
-    title={SITE.TITLE}
-    description="michelangelo, desarrollador web full stack."
-    image={{
-      src: SITE.BANNER,
-      alt: SITE.BANNER_ALT,
-      width: SITE.IMAGE_WIDTH,
-      height: SITE.IMAGE_HEIGHT,
-    }}
+    title="michelangelo | blog"
+    description="Un blog sobre software, ciencia y demás..."
+    image={SITE.IMAGE}
   />
   <HomeSEO slot="meta" />
   <Layout class="pt-24 md:pt-32 mb-20">
@@ -26,14 +21,14 @@ import HomeSEO from "@/components/seo/HomeSEO.astro"
         class="flex flex-col sm:flex-row sm:items-center justify-between flex-wrap gap-y-6"
       >
         <div class="flex-1">
-          <h1 class="flex flex-col md:gap-y-1">
-            <span class="text-3xl md:text-4xl font-bold text-foreground/80">
-              <span>soy</span>
-              <span class="font-black text-foreground">michelangelo</span>,
+          <h1 class="grid gap-y-1 md:text-wrap text-foreground/80">
+            <span class="text-3xl">
+              <span>Bienvenido a mi blog.</span>
             </span>
-            <span class="text-muted-foreground text-lg md:text-xl"
-              >desarrollador web full-stack.</span
-            >
+            <span class="text-lg leading-tight">
+              Aquí escribo sobre
+              <span class="text-primary">cualquier cosa</span>.
+            </span>
           </h1>
         </div>
       </section>

@@ -4,7 +4,12 @@ import { SITE } from "@/consts"
 
 interface Props {
   article: CollectionEntry<"articles">
-  image: string | URL
+  image: {
+    src: string | URL
+    alt: string
+    width: number | string
+    height: number | string
+  }
 }
 
 const {
@@ -16,7 +21,7 @@ const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
   headline: data.title,
-  image: [image],
+  image: [image.src],
   datePublished: data.date,
   dateModified: data.date,
   author: [
@@ -38,7 +43,7 @@ const postSchema = {
   },
   headline: data.title,
   description: data.description,
-  image: [image],
+  image: [image.src],
   datePublished: data.date,
   dateModified: data.date,
   author: [
@@ -53,7 +58,7 @@ const postSchema = {
     name: SITE.TITLE,
     logo: {
       "@type": "ImageObject",
-      url: image.toString(),
+      url: image.src.toString(),
     },
   },
 }
@@ -84,9 +89,18 @@ const breadcrumbSchema = {
 <meta property="article:published_time" content={data.date.toString()} />
 <meta property="article:modified_time" content={data.date.toString()} />
 
-<script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
-<script type="application/ld+json" set:html={JSON.stringify(postSchema)} />
 <script
+  is:inline
+  type="application/ld+json"
+  set:html={JSON.stringify(articleSchema)}
+/>
+<script
+  is:inline
+  type="application/ld+json"
+  set:html={JSON.stringify(postSchema)}
+/>
+<script
+  is:inline
   type="application/ld+json"
   set:html={JSON.stringify(breadcrumbSchema)}
 />

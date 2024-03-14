@@ -1,15 +1,16 @@
 ---
 import Footer from "@/components/Footer.astro"
 import { Toaster } from "@/components/ui/toaster"
+import { cn } from "@/lib/utils"
 ---
 
 <main
-  class:list={["max-w-screen-sm mx-auto px-4 min-h-svh", Astro.props.class]}
+  class={cn("max-w-screen-sm mx-auto px-4 min-h-svh", Astro.props.class)}
   transition:animate="fade"
 >
   <slot />
   <div
-    class="fixed bottom-0 left-0 w-full h-20 bg-gradient-to-t from-background to-transparent pointer-events-none select-none"
+    class="hidden dark:block fixed bottom-0 left-0 w-full h-20 bg-gradient-to-t from-background to-transparent pointer-events-none select-none"
   >
   </div>
 </main>

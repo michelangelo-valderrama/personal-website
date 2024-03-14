@@ -1,6 +1,6 @@
 ---
-title: 'Descargar y configurar Firefox Developer Edition para Ubuntu'
-description: 'Cómo descargar y configurar el navegador Firefox Developer Edition para Ubuntu 22.04.3.'
+title: "Descargar y configurar Firefox Developer Edition en Linux"
+description: "Cómo descargar y configurar el navegador Firefox Developer Edition para Linux."
 date: 2023-12-03
 tags:
   - ubuntu

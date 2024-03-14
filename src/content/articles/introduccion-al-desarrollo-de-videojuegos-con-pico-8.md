@@ -1,11 +1,11 @@
 ---
-title: Introducción al Desarrollo de Videojuegos con PICO-8
-description: Introducción a la programación con Lua creando un sencillo videojuego con PICO-8 Education Edition.
+title: "Cómo hacer un videojuego con PICO-8"
+description: Tutorial de cómo programar un videojuego en PICO-8.
 date: 2023-03-06
 tags:
   - gamedev
   - lua
-  - pico 8
+  - pico-8
   - programación
 ---
 
@@ -760,7 +760,7 @@ function _draw()
 end
 ```
 
-Para exportar vaya al **Modo Comando** y escriba `save squashy.png`, así se le descargará un archivo `.png`, si ese mismo archivo lo arrastra hasta la PICO-8 se le cargará el juego.
+Para exportar vaya al **Modo Comando** y escriba `save squashy.png`, así se le descargará un archivo `.png`, si ese mismo archivo lo arrastra hasta PICO-8 se le cargará el juego.
 
 ## Referencias
 

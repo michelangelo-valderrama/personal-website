@@ -13,8 +13,10 @@ export const groupBy = (array: any[], key: string) =>
 export const parseImage = (image: string, path: string = "") =>
   image.replace(/%s/g, SITE.URL).replace(/%p/g, path)
 
-export const parseArticleImage = (article: CollectionEntry<"articles">) =>
-  parseImage(article.data.img, `images/articles/${article.slug}`)
+export const parseArticleImage = (article: CollectionEntry<"articles">) => ({
+  ...article.data.img,
+  src: parseImage(article.data.img.src, `/images/articles/${article.slug}`),
+})
 
 export const validateEmail = (value: string) => {
   return /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/g.test(value)

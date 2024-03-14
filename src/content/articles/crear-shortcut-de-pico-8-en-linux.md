@@ -1,10 +1,10 @@
 ---
-title: Crear shortcut de Pico 8 en Linux
-description: 'Creando un shortcut (también conocido como añadir una aplicación al menú de aplicaciones) de Pico 8 en Linux.'
+title: Crear shortcut de PICO-8 en Linux
+description: 'Creando un shortcut de PICO-8 en Linux.'
 date: 2023-12-07
 tags:
   - ubuntu
-  - pico 8
+  - pico-8
   - tutorial
 ---
 
@@ -16,13 +16,13 @@ Para empezar, si todavía no tiene comprado Pico 8, puede hacerlo en esta [pági
 
 Una vez tenga descargado el programa, tendrá un directorio llamado `pico-8` con una imagen, unos textos y un par de ejecutables. Recomiendo leerse el `readme_linux.txt`, pero lo importante es que te asegures de poder ejecutar el ejecutable (valga la redundancia) con el siguiente comando:
 
-```
+```zsh
 sudo chmod u+x pico8
 ```
 
 Ahora, pruebe a ejecutar el programa con:
 
-```
+```zsh
 ./pico8
 ```
 
@@ -34,7 +34,7 @@ Para crear el shortcut, básicamente hay que hacer lo mismo que en mi artículo 
 
 Ejecute el siguiente comando para empezar a escribir en el archivo de configuración del shortcut:
 
-```
+```zsh
 vi ~/.local/share/applications/pico_8.desktop
 ```
 

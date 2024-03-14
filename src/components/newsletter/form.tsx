@@ -45,7 +45,8 @@ export function NewsletterForm() {
       await subscribeNewsletter({ email: email.input.value })
       email.setValue("")
       toast({
-        description: "Suscripción realizada con éxito",
+        title: 'Operación exitosa',
+        description: "¡Gracias por suscribirte! 🎉",
       })
     } catch (error) {
       let description: string;
@@ -67,10 +68,9 @@ export function NewsletterForm() {
 
   return (
     <form onSubmit={onSubmit}>
-      <p className="text-sm text-muted-foreground mb-2 pointer-events-none select-none text-right">Mi newsletter</p>
       <div className="flex gap-2 p-1 bg-muted rounded-lg">
         <div className="flex-1">
-          <Input className="truncate" {...email.input} placeholder="email@example.com" />
+          <Input className="truncate border-transparent shadow-none" {...email.input} placeholder="email@example.com" />
         </div>
         <div>
           <Button

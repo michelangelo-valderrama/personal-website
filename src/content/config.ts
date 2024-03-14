@@ -6,8 +6,15 @@ const articles = defineCollection({
     title: z.string(),
     description: z.string(),
     date: z.date(),
-    img: z.string().default(`%s${SITE.BANNER}`),
-    tags: z.array(z.string()).optional(),
+    img: z
+      .object({
+        src: z.string(),
+        alt: z.string(),
+        width: z.number().default(1920),
+        height: z.number().default(1080),
+      })
+      .default(SITE.IMAGE),
+    tags: z.array(z.string()),
   }),
 })
 

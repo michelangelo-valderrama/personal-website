@@ -1,52 +1,48 @@
 ---
-import { Rss } from "lucide"
-import GitHubIcon from "@/icons/GitHubIcon.astro"
-import LogoIcon from "@/icons/LogoIcon.astro"
-import LucideIcon from "./LucideIcon.astro"
 import FooterLink from "./FooterLink.astro"
-import { NewsletterForm } from "./newsletter/form"
+import Theme from "./Theme.astro"
 ---
 
 <footer class="border-t border-t-border/60 mb-20">
   <div class="max-w-screen-sm mx-auto pt-7 px-4">
-    <div class="mb-9">
-      <div class="max-w-72 ml-auto">
-        <NewsletterForm client:visible />
-      </div>
-    </div>
-    <div class="space-y-2">
-      <div class="space-x-2.5">
-        <FooterLink href="/" class="size-6">
-          <LogoIcon class="size-5" />
-          <span class="sr-only">Home</span>
-        </FooterLink><FooterLink
-          href="https://github.com/michelangelo-valderrama"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="size-6"
+    <article
+      class="grid grid-cols-2 w-full *:grid *:gap-y-1 flex-1 mb-6 items-start"
+    >
+      <article>
+        <FooterLink href="/">Inicio</FooterLink>
+        <FooterLink href="/rss.xml">Rss</FooterLink>
+        <FooterLink href="/newsletter">Newsletter</FooterLink>
+      </article>
+      <article>
+        <FooterLink href="https://github.com/michelangelo-valderrama" external
+          >Github</FooterLink
         >
-          <GitHubIcon class="size-5" />
-          <span class="sr-only">GitHub</span>
-        </FooterLink><FooterLink href="/rss.xml" target="_blank" class="size-6">
-          <LucideIcon class="size-5" icon={Rss} />
-          <span class="sr-only">RSS</span>
-        </FooterLink>
-      </div>
-      <div>
-        <p class="text-muted-foreground font-mono text-xs">
+        <FooterLink href="https://twitter.com/VTokyo9" external
+          >Twitter</FooterLink
+        >
+        <FooterLink
+          href="https://open.spotify.com/user/d6a2ogn82kfbzu593p9d0gt6x"
+          external>Spotify</FooterLink
+        >
+      </article>
+    </article>
+    <div class="flex gap-x-2 items-center">
+      <article class="flex-1">
+        <p class="dark:text-foreground/80 text-sm">
           Creado con <a
             class="text-foreground underline"
             href="https://astro.build"
             rel="noopener noreferrer"
             target="_blank">Astro</a
-          >, publicado en <a
+          >, desplegado en <a
             class="text-foreground underline"
             href="https://vercel.com/home"
             rel="noopener noreferrer"
             target="_blank">Vercel</a
           >.
         </p>
-      </div>
+      </article>
+      <article><Theme /></article>
     </div>
   </div>
 </footer>
