@@ -9,4 +9,9 @@
 
 .expressive-code {
   margin-bottom: 2rem;
+  filter: invert(1);
+}
+
+.dark .expressive-code {
+  filter: invert(0);
 }

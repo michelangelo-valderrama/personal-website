@@ -13,6 +13,7 @@ const articles = defineCollection({
         width: z.number().default(1920),
         height: z.number().default(1080),
         show: z.boolean().default(true),
+        credit: z.string().optional(),
       })
       .default({ ...SITE.IMAGE, show: false }),
     tags: z.array(z.string()),

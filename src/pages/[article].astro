@@ -45,18 +45,15 @@ const image = parseArticleImage(Astro.props)
         </h1>
         {
           image.show ? (
-            <figure class="my-4 md:my-6">
+            <div class="my-4 md:my-6">
               <img {...image} />
-              <figcaption class="text-muted-foreground text-xs mt-1.5">
-                {image.alt}
-              </figcaption>
-            </figure>
+            </div>
           ) : (
             <br class="mt-3" />
           )
         }
         <div
-          class="italic grid text-muted-foreground dark:text-foreground/80 text-sm md:text-base mb-1"
+          class="italic grid text-muted-foreground dark:text-foreground/80 text-sm mb-1"
         >
           <p>
             Por
@@ -78,6 +75,9 @@ const image = parseArticleImage(Astro.props)
         <Content />
       </Prose>
       <footer class="mt-14 md:mt-16">
+        <div class="mb-6 dark:text-foreground/80">
+          {image.credit ? <p class="italic">Imagen: {image.credit}</p> : null}
+        </div>
         <div class="grid">
           <hr class="max-w-20 border-t-[0.5px] border-foreground/40 mb-4" />
           <div class="mb-4">

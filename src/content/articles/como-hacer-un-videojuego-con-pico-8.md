@@ -4,9 +4,10 @@ description: Tutorial de cómo programar un videojuego en PICO-8.
 date: 2023-03-06
 img:
   src: "%s/%p/pico-8.webp"
-  alt: "Crédito: https://www.steamgriddb.com/grid/163642"
+  alt: Banner de PICO-8
   width: 920
   height: 430
+  credit: https://www.steamgriddb.com/grid/163642
 tags:
   - gamedev
   - lua

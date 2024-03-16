@@ -3,10 +3,11 @@ title: "El Principio del Universo: Desde las partículas hasta las primeras estr
 description: Un artículo sobre la cronología del Big Bang, desde la época de Planck hasta la era de las estrellas pasando por las segregaciones de las fuerzas fundamentales, la inflación cósmica y la aparición de los elementos pesados.
 date: 2023-03-07
 img:
-  src: https://physics.oregonstate.edu/sites/physics.oregonstate.edu/files/styles/1734_x_1110/public/2022-07/Quantum%20Cosmology%20Header.jpg?h=e719f4d8&itok=-ORCMfSK
-  alt: "Crédito: https://physics.oregonstate.edu/research/quantum-cosmology-and-foundations"
+  src: "%s%p/cosmologia.webp"
+  alt: Ilustración del Big Bang
   widht: 1734
   height: 1110
+  credit: https://physics.oregonstate.edu/research/quantum-cosmology-and-foundations
 tags:
   - física
   - divulgación

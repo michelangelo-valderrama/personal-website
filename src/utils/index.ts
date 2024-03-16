@@ -11,7 +11,10 @@ export const groupBy = (array: any[], key: string) =>
   }, {})
 
 export const parseImage = (image: string, path: string = "") =>
-  image.replace(/%s/g, SITE.URL).replace(/%p/g, path)
+  image
+    .replace(/%s/g, SITE.URL)
+    .replace(/%p/g, path)
+    .replace(/([^:]\/)\/+/g, "$1")
 
 export const parseArticleImage = (article: CollectionEntry<"articles">) => ({
   ...article.data.img,
