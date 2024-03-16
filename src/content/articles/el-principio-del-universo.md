@@ -9,10 +9,9 @@ img:
   height: 1110
   credit: https://physics.oregonstate.edu/research/quantum-cosmology-and-foundations
 tags:
-  - física
-  - divulgación
-  - big bang
-  - cosmología
+  - Física
+  - Divulgación
+  - Cosmología
 ---
 
 > Hay algo fascinante en la ciencia: con una mínima inversión en hechos se obtienen grandes rendimientos en conjeturas

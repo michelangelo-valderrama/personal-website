@@ -3,9 +3,8 @@ title: Descargar y configurar Firefox Developer Edition en Linux
 description: Cómo descargar y configurar el navegador Firefox Developer Edition para Linux.
 date: 2023-12-03
 tags:
-  - ubuntu
-  - firefox
-  - tutorial
+  - Ubuntu
+  - Tutorial
 ---
 
 Descargar y configurar **Firefox Developer Edition** para Ubuntu 20 o superiores no es una tarea complicada, pero si es la primera vez que se hace uno puede toparse con problemas inesperados si lo hace mal. Este es un breve tutorial para poder descargar y configurar Firefox Developer Edition sin complicaciones.

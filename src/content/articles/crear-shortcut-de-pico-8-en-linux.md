@@ -3,9 +3,9 @@ title: Crear shortcut de PICO-8 en Linux
 description: Creando un shortcut de PICO-8 en Linux.
 date: 2023-12-07
 tags:
-  - ubuntu
-  - pico-8
-  - tutorial
+  - Ubuntu
+  - PICO-8
+  - Tutorial
 ---
 
 De Pico 8 ya hablé en mi artículo [**Cómo hacer un videojuego con PICO-8**](https://imangelo.dev/como-hacer-un-videojuego-con-pico-8), pero hoy vengo a escribir un muy breve, brevísimo, artículo sobre como crear un shortcut de Pico 8 en Ubuntu.
