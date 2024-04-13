@@ -30,16 +30,7 @@ export default defineConfig({
         className: [],
       },
     },
-    remarkPlugins: [
-      remarkMath,
-      remarkImgAttr,
-      [
-        remarkImageOptimization,
-        {
-          figure: true,
-        },
-      ],
-    ],
+    remarkPlugins: [remarkMath, remarkImgAttr, remarkImageOptimization],
     rehypePlugins: [rehypeHeadingIds, rehypeLinkHeading, rehypeKatex],
   },
   integrations: [

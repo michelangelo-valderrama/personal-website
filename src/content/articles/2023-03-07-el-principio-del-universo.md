@@ -148,15 +148,15 @@ Los fermiones están caracterizados por tener un número de espín fraccionario 
 
 Las bosones son las _partículas portadoras_ de las fuerzas fundamentales (también llamadas interacciones fundamentales). Al contrario que los fermiones, los bosones se caracterizan por tener un espín entero, luego no cumplen el principio de exclusión de Pauli. Todas las fuerzas fundamentales están asociadas a estas partículas: los **bosones Z y W** con la _fuerza nuclear débil_, los **gluones** con la _fuerza nuclear fuerte_ —la que mantiene unidos a los quarks que forman los protones y los neutrones—, los **fotones** con la _fuerza electromagnética_ y el hipotético **gravitón** con la _fuerza gravitatoria_.
 
-![Figura 1: Esquema de algunas partículas fundamentales](https://neolorem.dev/images/blog/el-universo/esquema-particulas-fundamentales.png)
+![Figura 1: Esquema de algunas partículas fundamentales](/images/articles/2023-03-07-el-principio-del-universo/esquema-particulas-fundamentales.png)
 
-![Figura 2: Esquema indicando la masa, carga, grupo y extrañesa de las partículas fundamentales](https://neolorem.dev/images/blog/el-universo/esquema-masa-carga-grupo-extranesa-particulas-fundamentales.png)
+![Figura 2: Esquema indicando la masa, carga, grupo y extrañesa de las partículas fundamentales](/images/articles/2023-03-07-el-principio-del-universo/esquema-masa-carga-grupo-extranesa-particulas-fundamentales.png)
 
-![Figura 3: Imagen del espectro electromagnético, sus longitudes de onda, la escala aproximada de estas, su frecuencia, su temperatura y si penetran la atmósfera](https://neolorem.dev/images/blog/el-universo/espectro-electromagnetico.png)
+![Figura 3: Imagen del espectro electromagnético, sus longitudes de onda, la escala aproximada de estas, su frecuencia, su temperatura y si penetran la atmósfera](/images/articles/2023-03-07-el-principio-del-universo/espectro-electromagnetico.png)
 
-![Figura 4: Imagen del proceso de fusión del hidrógeno](https://neolorem.dev/images/blog/el-universo/proceso-fusion-hidrogeno.png)
+![Figura 4: Imagen del proceso de fusión del hidrógeno](/images/articles/2023-03-07-el-principio-del-universo/proceso-fusion-hidrogeno.png)
 
-![Figura 5: Fotografía de la radiación del fondo cósmico de microondas](https://neolorem.dev/images/blog/el-universo/radiacion-del-fondo-cosmico-de-microondas.png)
+![Figura 5: Fotografía de la radiación del fondo cósmico de microondas](/images/articles/2023-03-07-el-principio-del-universo/radiacion-del-fondo-cosmico-de-microondas.png)
 
 ## Referencias
 

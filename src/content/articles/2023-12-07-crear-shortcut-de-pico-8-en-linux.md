@@ -8,7 +8,7 @@ tags:
   - Tutorial
 ---
 
-De Pico 8 ya hablé en mi artículo [**Cómo hacer un videojuego con PICO-8**](https://imangelo.dev/como-hacer-un-videojuego-con-pico-8), pero hoy vengo a escribir un muy breve, brevísimo, artículo sobre como crear un shortcut de Pico 8 en Ubuntu.
+De Pico 8 ya hablé en mi artículo [**Cómo hacer un videojuego con PICO-8**](/2023-03-06-como-hacer-un-videojuego-con-pico-8), pero hoy vengo a escribir un muy breve, brevísimo, artículo sobre como crear un shortcut de Pico 8 en Ubuntu.
 
 ## Para empezar
 

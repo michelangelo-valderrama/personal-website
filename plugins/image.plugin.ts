@@ -1,18 +1,14 @@
+import type { RemarkPlugin } from "@astrojs/markdown-remark"
 import { visit } from "unist-util-visit"
 import sizeOf from "image-size"
 
-interface Props {
-  figure?: boolean
-}
-
-export const remarkImageOptimization =
-  ({ figure = false }: Props) =>
-  (tree: any) => {
-    const v = (node: any, _: any, parent: any) => {
-      node.properties = node.properties || {}
+export function remarkImageOptimization(): ReturnType<RemarkPlugin> {
+  const promises = []
+  return async function (tree) {
+    visit(tree, "image", (node, _, parent) => {
+      if (!parent) return
+      node.data = node.data || {}
       node.data.hProperties = node.data.hProperties || {}
-      node.properties.loading = "lazy"
-      node.properties.decoding = "async"
 
       const { url, alt } = node
       const { width, height } = node.data.hProperties
@@ -20,30 +16,22 @@ export const remarkImageOptimization =
 
       let dimensions = ""
 
-      if (!/https:\/\//g.test(url)) {
+      if (width) dimensions = `width=${width} height=${height ?? width}`
+      else if (!/https:\/\//g.test(url)) {
         const size = sizeOf(`./public/${url}`)
         dimensions = `width=${size.width} height=${size.height}`
       }
 
-      if (width) dimensions = `width=${width} height=${height ?? width}`
-
-      let value = `<img src="${url}" alt="${altRaw}" ${dimensions} loading="lazy" decoding="async" />`
-
-      if (figure) {
-        value = `
+      const value = `
         <figure>
-          ${value}
+          <img src="${url}" alt="${altRaw}" ${dimensions} loading="lazy" decoding="async" />
           <figcaption>${altRaw}</figcaption>
         </figure>`
-      }
 
-      const n = {
+      parent.children.splice(parent.children.indexOf(node), 1, {
         type: "html",
         value,
-      }
-
-      parent.children.splice(parent.children.indexOf(node), 1, n)
-    }
-
-    return visit(tree, "image", v)
+      })
+    })
   }
+}
