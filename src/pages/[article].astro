@@ -2,14 +2,12 @@
 import type { GetStaticPaths } from "astro"
 import { getCollection, type CollectionEntry } from "astro:content"
 import { parseArticleImage } from "@/utils"
-import WrittenByHuman from "@/icons/WrittenByHuman.astro"
 import Root from "@/layouts/Root.astro"
 import Layout from "@/layouts/Layout.astro"
 import Prose from "@/components/Prose.astro"
 import SEO from "@/components/seo/SEO.astro"
 import ArticleSEO from "@/components/seo/ArticleSEO.astro"
 import ComeBack from "@/components/ComeBack.astro"
-import { NewsletterForm } from "@/components/newsletter/form"
 import AsideContent from "@/components/AsideContent.astro"
 import ArticleFooter from "@/components/ArticleFooter.astro"
 
@@ -30,7 +28,12 @@ const image = parseArticleImage(Astro.props)
 ---
 
 <Root>
-  <SEO slot="meta" title={data.title} description={data.description} {image} />
+  <SEO
+    slot="meta"
+    title={`${data.title} | Imangelo Blog`}
+    description={data.description}
+    {image}
+  />
   <ArticleSEO slot="meta" article={Astro.props} {image} />
   <link
     slot="meta"
