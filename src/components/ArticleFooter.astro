@@ -1,0 +1,34 @@
+---
+import AsideContent from "./AsideContent.astro"
+
+interface Props {
+  imageCredit?: string
+  tags?: string[]
+}
+
+const { imageCredit, tags } = Astro.props
+---
+
+<footer class="mt-24 md:mt-36 max-w-screen-sm mx-auto lg:mx-0">
+  <div class="mb-6 dark:text-foreground/80">
+    {imageCredit ? <p class="italic">Imagen: {imageCredit}</p> : null}
+  </div>
+  <div class="grid">
+    <hr class="max-w-20 border-t-[0.5px] border-foreground/40 mb-4" />
+    <div class="mb-4">
+      <p
+        class="dark:text-foreground/80 italic flex flex-wrap gap-x-1.5 items-center"
+      >
+        <span>Etiquetado en:</span>
+        {
+          tags?.map((t) => (
+            <span class="text-foreground border px-2 py-0.5 text-sm rounded-lg not-italic shadow">
+              {t}
+            </span>
+          ))
+        }
+      </p>
+    </div>
+  </div>
+  <AsideContent class="max-w-md mt-10 lg:hidden" />
+</footer>

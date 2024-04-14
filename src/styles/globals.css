@@ -1,6 +1,7 @@
 @import "./variables.css";
 @import "./expressive-code.css";
 @import "./fonts.css";
+@import "./reset.css";
 
 @tailwind base;
 @tailwind components;
@@ -9,16 +10,6 @@
 @layer base {
   * {
     @apply border-border box-border min-w-0;
-  }
-  h1,
-  h2,
-  h3,
-  h4 {
-    @apply text-balance;
-  }
-  p,
-  figcaption {
-    @apply text-pretty;
   }
 }
 

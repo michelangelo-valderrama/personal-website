@@ -67,7 +67,7 @@ export function NewsletterForm() {
   }
 
   return (
-    <form onSubmit={onSubmit}>
+    <form onSubmit={onSubmit} className="w-full">
       <div className="flex gap-2 p-1 bg-muted rounded-lg">
         <div className="flex-1">
           <Input className="truncate border-transparent shadow-none" {...email.input} placeholder="email@example.com" />

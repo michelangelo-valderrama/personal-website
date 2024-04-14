@@ -1,0 +1,24 @@
+---
+import WrittenByHuman from "@/icons/WrittenByHuman.astro"
+import { NewsletterForm } from "./newsletter/form"
+import { cn } from "@/lib/utils"
+---
+
+<div class={cn(Astro.props.class)}>
+  <p class="dark:text-foreground/80 mb-6">
+    Si quieres estar atento a mis futuras publicaciones, puedes suscribirte a mi <a
+      href="/rss.xml"
+      class="text-foreground underline underline-offset-4">rss</a
+    > o mi <a
+      href="/newsletter"
+      class="text-foreground underline underline-offset-4">newsletter</a
+    >.
+  </p>
+  <NewsletterForm client:load />
+  <div class="flex mt-12">
+    <a href="https://notbyai.fyi/" target="_blank" rel="noopener noreferrer">
+      <WrittenByHuman />
+      <span class="sr-only">Escrito por un humano, no por IA</span>
+    </a>
+  </div>
+</div>

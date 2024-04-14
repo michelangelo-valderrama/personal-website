@@ -5,6 +5,7 @@ date: 2023-03-23
 tags:
   - Matemáticas
   - Ciencia
+  - Reflexión
 ---
 
 #### 1. Los matemáticos y la ciencia de las matemáticas

@@ -1,5 +1,4 @@
 ---
-import { ViewTransitions } from "astro:transitions"
 import "@/styles/globals.css"
 import "@fontsource/geist-sans/400.css"
 import "@fontsource/geist-sans/700.css"
@@ -16,11 +15,10 @@ import "@fontsource/source-serif-pro/900.css"
 >
   <head>
     <meta name="theme-color" content="#09090b" />
-    <!-- <ViewTransitions /> -->
     <slot name="meta" />
   </head>
   <body
-    class="relative min-h-svh bg-background text-foreground selection:bg-foreground selection:text-background antialiased"
+    class="relative size-full min-h-svh bg-background text-foreground selection:bg-foreground selection:text-background antialiased flex flex-col"
   >
     <slot />
   </body>
