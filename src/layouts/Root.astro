@@ -1,25 +1,27 @@
 ---
-import "@/styles/globals.css"
-import "@fontsource/geist-sans/400.css"
-import "@fontsource/geist-sans/700.css"
-import "@fontsource/geist-sans/900.css"
-import "@fontsource/source-serif-pro/400.css"
-import "@fontsource/source-serif-pro/600.css"
-import "@fontsource/source-serif-pro/700.css"
-import "@fontsource/source-serif-pro/900.css"
+import '@/styles/globals.css'
+import '@fontsource/geist-sans/400.css'
+import '@fontsource/geist-sans/700.css'
+import '@fontsource/geist-sans/900.css'
+import '@fontsource/source-serif-pro/400.css'
+import '@fontsource/source-serif-pro/600.css'
+import '@fontsource/source-serif-pro/700.css'
+import '@fontsource/source-serif-pro/900.css'
 ---
 
 <html
-  lang="es"
-  class="scrollbar-thin scrollbar-thumb-muted scrollbar-track-background"
+	lang="es"
+	class="scrollbar-thin scrollbar-thumb-muted scrollbar-track-background"
 >
-  <head>
-    <meta name="theme-color" content="#09090b" />
-    <slot name="meta" />
-  </head>
-  <body
-    class="relative size-full min-h-svh bg-background text-foreground selection:bg-foreground selection:text-background antialiased flex flex-col"
-  >
-    <slot />
-  </body>
+	<head>
+		<meta name="theme-color" content="#09090b" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+		<slot name="meta" />
+	</head>
+	<body
+		class="relative size-full min-h-svh bg-background text-foreground selection:bg-foreground selection:text-background antialiased flex flex-col"
+	>
+		<slot />
+	</body>
 </html>

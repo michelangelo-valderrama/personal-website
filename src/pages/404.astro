@@ -1,0 +1,21 @@
+---
+import Root from '@/layouts/Root.astro'
+import Layout from '@/layouts/Layout.astro'
+import SEO from '@/components/seo/SEO.astro'
+import { SITE } from '@/consts'
+import ComeBack from '@/components/ComeBack.astro'
+---
+
+<Root>
+	<meta name="robots" content="none" slot="meta" />
+	<SEO
+		slot="meta"
+		title="Error 404"
+		description="Página no encontrada"
+		image={SITE.IMAGE}
+	/>
+	<Layout class="flex items-center justify-center flex-col gap-y-2">
+		<h1 class="text-xl md:text-2xl">Página no encontrada</h1>
+		<ComeBack />
+	</Layout>
+</Root>
