@@ -1,0 +1,12 @@
+{
+  "redirects": [
+    {
+      "source": "/crear-shortcut-de-pico-8-en-linux",
+      "destination": "/2023-12-07-crear-shortcut-de-pico-8-en-linux"
+    },
+    {
+      "source": "/introduccion-al-desarrollo-de-videojuegos-con-pico-8",
+      "destination": "/2023-03-06-como-hacer-un-videojuego-con-pico-8"
+    }
+  ]
+}
