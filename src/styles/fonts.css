@@ -1,7 +1,15 @@
 @font-face {
-  font-family: "Cascadia";
-  src: url("/fonts/cascadia-code-pl.woff2"), format("woff2");
+  font-family: 'Cascadia';
+  src: url('/fonts/cascadia-code-pl.woff2'), format('woff2');
   font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PPEditorialNew';
+  src: url('/fonts/PPEditorialNew-Variable.woff2') format('woff2');
+  font-weight: 100 900;
   font-style: normal;
   font-display: swap;
 }

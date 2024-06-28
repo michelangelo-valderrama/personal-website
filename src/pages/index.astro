@@ -8,31 +8,28 @@ import HomeSEO from '@/components/seo/HomeSEO.astro'
 ---
 
 <Root>
-	<SEO
-		slot="meta"
-		title="Imangelo Blog"
-		description="Un blog sobre software, ciencia y demás..."
-		image={SITE.IMAGE}
-	/>
-	<HomeSEO slot="meta" />
-	<Layout class="pt-24 md:pt-32 mb-20 max-w-screen-md">
-		<header>
-			<section
-				class="flex flex-col sm:flex-row sm:items-center justify-between flex-wrap gap-y-6"
-			>
-				<div class="flex-1">
-					<h1 class="grid gap-y-1 md:text-wrap text-foreground/70">
-						<span class="text-3xl">
-							Soy <span class="text-foreground">Michelangelo</span>,
-						</span>
-						<span class="leading-snug max-w-80"
-							>un desarrollador web que a veces escribe sobre software o
-							ciencia.</span
-						>
-					</h1>
-				</div>
-			</section>
-		</header>
-		<Articles />
-	</Layout>
+  <SEO
+    slot="meta"
+    title="Imangelo Blog"
+    description="Un blog sobre software, ciencia y demás..."
+    image={SITE.IMAGE}
+  />
+  <HomeSEO slot="meta" />
+  <Layout class="pt-24 md:pt-32 mb-20 max-w-screen-sm">
+    <header>
+      <section
+        class="flex flex-col sm:flex-row sm:items-center justify-between flex-wrap gap-y-6"
+      >
+        <div class="flex-1">
+          <h1 class="flex flex-col gap-y-2 justify-center items-center text-foreground/70 text-center">
+            <span class="font-bold text-3xl md:text-4xl font-serif text-foreground">Soy Michelangelo,</span>
+            <span class="leading-snug max-w-80 font-thin font-mono"
+              >desarrollador web que a veces escribe para sí mismo.</span
+            >
+          </h1>
+        </div>
+      </section>
+    </header>
+    <Articles />
+  </Layout>
 </Root>

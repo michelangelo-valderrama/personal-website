@@ -16,7 +16,7 @@ module.exports = {
 		extend: {
 			fontFamily: {
 				sans: ['Geist Sans', ...defaultTheme.fontFamily.sans],
-				serif: ['Source Serif Pro', ...defaultTheme.fontFamily.serif],
+				serif: ['PPEditorialNew', ...defaultTheme.fontFamily.serif],
 				mono: ['Cascadia', ...defaultTheme.fontFamily.mono]
 			},
 			colors: {
