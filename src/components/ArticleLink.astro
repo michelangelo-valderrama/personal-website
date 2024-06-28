@@ -7,18 +7,18 @@ interface Props {
 
 const { date, slug, title } = Astro.props
 
-const time = date.toLocaleDateString("es", {
-  day: "2-digit",
-  month: "short",
+const time = date.toLocaleDateString('es', {
+  day: '2-digit',
+  month: 'short'
 })
 ---
 
 <a
   href={slug}
-  class="flex items-start gap-x-2 hover:bg-accent/60 hover:text-accent-foreground transition pr-3 pl-3 md:pl-4 py-3.5 group"
+  class="transition flex items-start gap-x-2 hover:bg-accent/60 pr-3 pl-3 md:pl-4 py-3.5 group group-hover/article:opacity-40 hover:!opacity-100"
 >
   <p
-    class="text-foreground/90 flex-1 group-hover:text-foreground text-sm md:text-base"
+    class="transition text-foreground/90 flex-1 group-hover:text-accent-foreground text-sm md:text-base"
   >
     {title}
   </p>

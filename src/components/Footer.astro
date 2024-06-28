@@ -1,30 +1,35 @@
 ---
-import FooterLink from "./FooterLink.astro"
-import Theme from "./Theme.astro"
+import FooterLink from './FooterLink.astro'
+import Theme from './Theme.astro'
 ---
 
 <footer class="border-t border-t-border/60 mb-20">
   <div class="max-w-screen-lg mx-auto pt-7 px-4">
     <article
-      class="grid grid-cols-2 w-full *:grid *:gap-y-1 flex-1 mb-6 items-start"
+      class="grid grid-cols-2 *:flex *:flex-col *:gap-y-1 flex-1 mb-6 items-start"
     >
-      <article>
-        <FooterLink href="/">Inicio</FooterLink>
-        <FooterLink href="/rss.xml">Rss</FooterLink>
-        <FooterLink href="/newsletter">Newsletter</FooterLink>
-      </article>
-      <article>
-        <FooterLink href="https://github.com/michelangelo-valderrama" external
-          >Github</FooterLink
-        >
-        <FooterLink href="https://twitter.com/VTokyo9" external
-          >Twitter</FooterLink
-        >
-        <FooterLink
-          href="https://open.spotify.com/user/d6a2ogn82kfbzu593p9d0gt6x"
-          external>Spotify</FooterLink
-        >
-      </article>
+      <ul>
+        <li><FooterLink href="/">Inicio</FooterLink></li>
+        <li><FooterLink href="/rss.xml">Rss</FooterLink></li>
+        <li><FooterLink href="/newsletter">Newsletter</FooterLink></li>
+      </ul>
+      <ul>
+        <li>
+          <FooterLink href="https://github.com/michelangelo-valderrama" external
+            >Github</FooterLink
+          >
+        </li>
+        <li>
+          <FooterLink href="https://twitter.com/VTokyo9" external
+            >Twitter</FooterLink
+          >
+        </li>
+        <li>
+          <FooterLink href="https://www.npmjs.com/~imangelo" external
+            >Npm</FooterLink
+          >
+        </li>
+      </ul>
     </article>
     <div class="flex gap-x-2 items-center">
       <article class="flex-1">

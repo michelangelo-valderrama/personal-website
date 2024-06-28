@@ -9,19 +9,30 @@ import '@fontsource/source-serif-pro/700.css'
 import '@fontsource/source-serif-pro/900.css'
 ---
 
-<html
-	lang="es"
-	class="scrollbar-thin scrollbar-thumb-muted scrollbar-track-background"
->
-	<head>
-		<meta name="theme-color" content="#09090b" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
-		<slot name="meta" />
-	</head>
-	<body
-		class="relative size-full min-h-svh bg-background text-foreground selection:bg-foreground selection:text-background antialiased flex flex-col"
-	>
-		<slot />
-	</body>
+<html lang="es">
+  <head>
+    <meta name="theme-color" content="#09090b" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <link
+      rel="preload"
+      href="/fonts/PPEditorialNew-Variable.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/cascadia-code-pl.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <slot name="meta" />
+  </head>
+  <body
+    class="relative size-full min-h-svh bg-background text-foreground selection:bg-zinc-300 selection:text-zinc-700 dark:selection:bg-zinc-200 dark:selection:text-zinc-600 antialiased flex flex-col"
+  >
+    <slot />
+  </body>
 </html>
