@@ -1,6 +1,6 @@
 ---
-title: "El Principio del Universo: Desde las partículas hasta las primeras estrellas"
-description: Un artículo sobre la cronología del Big Bang, desde la época de Planck hasta la era de las estrellas pasando por las segregaciones de las fuerzas fundamentales, la inflación cósmica y la aparición de los elementos pesados.
+title: "El Principio del Universo: Desde las partículas hasta las estrellas"
+description: "Un artículo sobre la cronología del Big Bang: Desde la época de Planck hasta la aparición de las primeras estrellas."
 date: 2023-03-07
 img:
   src: "%s%p/cosmologia.webp"
