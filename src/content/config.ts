@@ -15,7 +15,11 @@ const articles = defineCollection({
         show: z.boolean().default(true),
         credit: z.string().optional(),
       })
-      .default({ ...SITE.IMAGE, show: false }),
+      .default({
+        ...SITE.IMAGE,
+        src: '%s' + SITE.IMAGE.src,
+        show: false
+      }),
     tags: z.array(z.string()),
   }),
 })
