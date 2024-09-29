@@ -1,7 +1,8 @@
 ---
-import { SITE } from '@/consts'
+import { Image } from 'astro:assets'
 import Layout from '@/layouts/Layout.astro'
 import Root from '@/layouts/Root.astro'
+import { SITE } from '@/consts'
 import Articles from '@/components/Articles.astro'
 import SEO from '@/components/seo/SEO.astro'
 import HomeSEO from '@/components/seo/HomeSEO.astro'
@@ -20,16 +21,19 @@ import HomeSEO from '@/components/seo/HomeSEO.astro'
       <section
         class="flex flex-col sm:flex-row sm:items-center justify-between flex-wrap gap-y-6"
       >
-        <div class="flex-1">
-          <h1 class="flex flex-col gap-y-2 justify-center text-foreground/70">
-            <span
-              class="font-bold text-2xl md:text-3xl font-eva text-foreground"
-              >Soy Michelangelo,</span
-            >
-            <span class="leading-snug max-w-80 font-thin font-mono"
-              >un desarrollador web que a veces escribe para sí mismo.</span
-            >
+        <div class="flex-1 flex justify-between">
+          <h1 class="flex flex-col justify-center text-foreground/70">
+            <span class="font-semibold text-foreground">Soy Michelangelo,</span>
+            <span>desarrollador y diseñador web.</span>
           </h1>
+          <Image
+            class="rounded-full aspect-square max-w-20"
+            src="/pato.webp"
+            width={200}
+            height={200}
+            alt="Mi imagen de perfil de github."
+            loading="eager"
+          />
         </div>
       </section>
     </header>

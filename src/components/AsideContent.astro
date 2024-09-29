@@ -1,7 +1,7 @@
 ---
-import WrittenByHuman from "@/icons/WrittenByHuman.astro"
-import { NewsletterForm } from "./newsletter/form"
-import { cn } from "@/lib/utils"
+import BrainMade from '@/icons/BrainMade.astro'
+import { cn } from '@/lib/utils'
+import { NewsletterForm } from './newsletter/form'
 ---
 
 <div class={cn(Astro.props.class)}>
@@ -15,9 +15,9 @@ import { cn } from "@/lib/utils"
     >.
   </p>
   <NewsletterForm client:load />
-  <div class="flex mt-12">
-    <a href="https://notbyai.fyi/" target="_blank" rel="noopener noreferrer">
-      <WrittenByHuman />
+  <div class="flex mt-8">
+    <a href="https://brainmade.org/" target="_blank" rel="noopener noreferrer">
+      <BrainMade class="max-w-32" />
       <span class="sr-only">Escrito por un humano, no por IA</span>
     </a>
   </div>
