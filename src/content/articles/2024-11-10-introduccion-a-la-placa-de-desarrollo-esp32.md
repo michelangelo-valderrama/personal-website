@@ -1,6 +1,6 @@
 ---
 title: Introducción a la placa de desarrollo ESP32
-description: Aprende cómo los Dev Containers optimizan el desarrollo de proyectos frontend y backend, creando entornos replicables y ahorrando tiempo en configuraciones complejas.
+description: Sobre la placa de desarrollo ESP32 y cómo programar en ella con el IDE de Arduino.
 date: 2024-11-10
 tags:
   - esp32
