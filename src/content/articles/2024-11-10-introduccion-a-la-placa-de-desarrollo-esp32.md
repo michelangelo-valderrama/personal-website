@@ -108,7 +108,7 @@ Para comprobar que todo ha ido bien, hay que subir un programa al ESP32. Para es
 
 1. Selecciona tu placa en el menu desplegable, al lado del check y la flecha, y haz click en **Select other board and port...**
 2. En **BOARDS**, busca el modelo de tu placa ESP32, en mi caso es **ESP32 DEV MODULE**. También hay que seleccionar el puerto:
-   ![[../../img/Screenshot from 2024-11-10 12-32-30.png]]
+   ![Seleccionar el modelo de la placa y el puerto](/images/articles/2024-11-10-introduccion-a-la-placa-de-desarrollo-esp32/seleccionar-el-modelo-de-la-placa-el-puerto.png)
 
 Dale a **OK** y pega el siguiente código en el editor:
 
