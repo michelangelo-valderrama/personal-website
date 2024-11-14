@@ -7,13 +7,13 @@ tags:
   - iot
 ---
 
-Hace tiempo que tengo un **ESP32** en casa, pero lo compré más por la curiosidad que por tener algo en mente con el que usarlo. Igualmente, siempre es divertido aprender cosas de IoT y electrónica, como programadores es una forma de pasar de la abstracción del código a algo tangible y aun más incromprensible como lo es el _mundo real_. AHHH, el mundo real.
+Hace tiempo que tengo un **ESP32** en casa, pero lo compré más por la curiosidad que por tener algo en mente con el que usarlo. Igualmente, siempre es divertido aprender cosas de IoT y electrónica, como programador es una forma de pasar de la abstracción del código a algo tangible y aun más incromprensible como lo es el _mundo real_. AHHH, el mundo real.
 
 Como es de esperar, no tengo ni idea de estas cosas, pero os quiero transmitir un poco de lo que he aprendido por si os es útil.
 
-## El SoC ESP32
+## El ESP32
 
-### ¿Qué es el la placa de desarrollo ESP32?
+### ¿Qué es el ESP32?
 
 El **ESP32** es una serie de _microcontroladores SoC_ (system-on-chip) de bajo coste y bajo consumo energético con WIFI y Bluetooth modo dual integrados. Actualmente son creados y desarrollados por la empresa china **Expressif Systems**.
 
@@ -23,7 +23,7 @@ Esta seria es la sucesora del **ESP8266**. Es mejor en todo y viene con Bluetoot
 
 Este chip se ha vuelto famoso por su bajo costo (he encontrado estos chips hasta por un 1€ en AliexPress), gran potencia (superando al **Arduino UNO**), ser (en su mayoría) Dual-core y tener WIFI y Bluetooth integrados. Además, es compatible con **Arduino IDE**.
 
-### Especificaciones del ESP32
+### Algunas especificaciones del ESP32
 
 Por si quereis detelles muy técnicos, os dejoe el _datasheet_ oficial: https://www.espressif.com/sites/default/files/documentation/esp32_datasheet_en.pdf. Aquí simplemente voy a nombrar las cosas que entiendo:
 
@@ -36,11 +36,11 @@ Por si quereis detelles muy técnicos, os dejoe el _datasheet_ oficial: https://
 
 ### La serie ESP32
 
-El ESP32 es solo chip, pero también hace referencia a toda la serie (o familia) de **placas de desarrollo** que implementan el chip ESP32. Programar directamente en el chip ESP32 es poco práctico para aprender, testear o prototipar. Por eso se utilizan las placas de desarrollo, que vienen con toda la circutería necesaria para usar el chip, como pines para conectar periféricos, un puerto para conectarlo al ordenador, una antena WIFI y etc etc. Además, otras placas pueden venir con cámaras y otro tipos de sensores integrados.
+El ESP32 es solo el chip, pero también hace referencia a toda la serie (o familia) de **placas de desarrollo** que implementan el chip ESP32. Programar directamente en el chip ESP32 es poco práctico para aprender, testear o prototipar. Por eso se utilizan las placas de desarrollo, que vienen con toda la circutería necesaria para usar el chip, como pines para conectar periféricos, un puerto para conectarlo al ordenador, una antena WIFI y etc etc. Además, otras placas pueden venir con cámaras y otro tipos de sensores integrados.
 
 Debido a que hay muchas placas, es normal abrumarse un poco. La recomendable para principiantes es **DOIT Esp32 DevKit v1** (ESP-WROOM-32). Aunque, seguramente os valga cualquiera que se parezca a esto:
 
-!(Fotografía de una placa de desarrollo ESP32)[/images/articles/2024-11-10-introduccion-a-la-placa-de-desarrollo-esp32/fotografia-de-una-placa-de-desarrollo-esp32.png]
+![Fotografía de una placa de desarrollo ESP32](/images/articles/2024-11-10-introduccion-a-la-placa-de-desarrollo-esp32/fotografia-de-una-placa-de-desarrollo-esp32.png)
 
 ## ¿Cómo programar en el ESP32?
 
